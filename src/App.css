@@ -11,11 +11,11 @@
   padding: 25px;
   background-color: #000000;
   color: white;
-  padding-right: 200px;
+  padding-right: 15vw;
 }
 
 .navbar-left h1 {
-  padding-left: 300px;
+  padding-left: 20vw;
   margin: 0;
   font-size: 1.3rem;
 }
