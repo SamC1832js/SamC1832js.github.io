@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Sam-C-Portfolio/static/css/main.73778bd8.css",
+    "main.js": "/Sam-C-Portfolio/static/js/main.09fcb308.js",
+    "static/js/453.eb3479b4.chunk.js": "/Sam-C-Portfolio/static/js/453.eb3479b4.chunk.js",
+    "static/media/headshot.png": "/Sam-C-Portfolio/static/media/headshot.862219da7bcec7cdd048.png",
+    "index.html": "/Sam-C-Portfolio/index.html",
+    "main.73778bd8.css.map": "/Sam-C-Portfolio/static/css/main.73778bd8.css.map",
+    "main.09fcb308.js.map": "/Sam-C-Portfolio/static/js/main.09fcb308.js.map",
+    "453.eb3479b4.chunk.js.map": "/Sam-C-Portfolio/static/js/453.eb3479b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.73778bd8.css",
+    "static/js/main.09fcb308.js"
+  ]
+}
