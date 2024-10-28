@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .navbar {
@@ -9,12 +10,13 @@
   padding: 25px;
   background-color: #000000;
   color: white;
+  padding-right: 200px;
 }
 
 .navbar-left h1 {
-  padding-left: 200px;
+  padding-left: 300px;
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .navbar-right button {
