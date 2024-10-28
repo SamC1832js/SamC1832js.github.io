@@ -1,7 +1,7 @@
 import './App.css';
-import { HashRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom'; 
+import { Route, Routes, Link, Navigate, useLocation } from 'react-router-dom'; 
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import React, { useState } from "react";
+import React from "react";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -9,44 +9,40 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 
 function App() {
-  const [location, setLocation] = useState("/home");
-  
-  return (
-    <Router>
-      <div className="App">
-        <header className="App-header">
-          {/* Navbar */}
-          <nav className="navbar">
-            <div className="navbar-left">
-              <h1>Sam C</h1>
-            </div>
-            <div className="navbar-right">
-              <Link to="/home" onClick={() => setLocation("/home")}><button>Home</button></Link>
-              <Link to="/about" onClick={() => setLocation("/about")}><button>About</button></Link>
-              <Link to="/skills" onClick={() => setLocation("/skills")}><button>Skills</button></Link>
-              <Link to="/projects" onClick={() => setLocation("/projects")}><button>Projects</button></Link>
-              <Link to="/contact" onClick={() => setLocation("/contact")}><button>Contact</button></Link>
-            </div>
-          </nav>
-        </header>
+  const location = useLocation(); // Now it will work because Router is at root
 
-        {/* Main content */}
-        <main>
-          <TransitionGroup>
-            <CSSTransition key={location} classNames="fade" timeout={300}>
-              <Routes location={location}>
-                <Route path="/" element={<Navigate to="/home" />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/skills" element={<Skills />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
-            </CSSTransition>
-          </TransitionGroup>
-        </main>
-      </div>
-    </Router>
+  return (
+    <div className="App">
+      <header className="App-header">
+        <nav className="navbar">
+          <div className="navbar-left">
+            <h1>Sam C</h1>
+          </div>
+          <div className="navbar-right">
+            <Link to="/home"><button>Home</button></Link>
+            <Link to="/about"><button>About</button></Link>
+            <Link to="/skills"><button>Skills</button></Link>
+            <Link to="/projects"><button>Projects</button></Link>
+            <Link to="/contact"><button>Contact</button></Link>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <TransitionGroup>
+          <CSSTransition key={location.key} classNames="fade" timeout={300}>
+            <Routes location={location}>
+              <Route path="/" element={<Navigate to="/home" />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </CSSTransition>
+        </TransitionGroup>
+      </main>
+    </div>
   );
 }
 
