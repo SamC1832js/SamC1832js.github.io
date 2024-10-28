@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/SamC-1832.github.io/static/css/main.73778bd8.css",
-    "main.js": "/SamC-1832.github.io/static/js/main.26bb97d7.js",
+    "main.js": "/SamC-1832.github.io/static/js/main.e94975f1.js",
     "static/js/453.eb3479b4.chunk.js": "/SamC-1832.github.io/static/js/453.eb3479b4.chunk.js",
     "static/media/headshot.png": "/SamC-1832.github.io/static/media/headshot.862219da7bcec7cdd048.png",
     "index.html": "/SamC-1832.github.io/index.html",
     "main.73778bd8.css.map": "/SamC-1832.github.io/static/css/main.73778bd8.css.map",
-    "main.26bb97d7.js.map": "/SamC-1832.github.io/static/js/main.26bb97d7.js.map",
+    "main.e94975f1.js.map": "/SamC-1832.github.io/static/js/main.e94975f1.js.map",
     "453.eb3479b4.chunk.js.map": "/SamC-1832.github.io/static/js/453.eb3479b4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.73778bd8.css",
-    "static/js/main.26bb97d7.js"
+    "static/js/main.e94975f1.js"
   ]
 }
