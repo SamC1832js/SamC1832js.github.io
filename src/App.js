@@ -9,7 +9,8 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 
 function App() {
-  const [location, setLocation] = useState(window.location.pathname);
+  const [location, setLocation] = useState("/home"); // Set initial location to "/home"
+  
   return (
     <Router>
       <div className="App">
@@ -34,6 +35,7 @@ function App() {
           <TransitionGroup>
             <CSSTransition key={location} classNames="fade" timeout={300}>
               <Routes location={location}>
+                <Route path="/" element={<Navigate to="/home" />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/skills" element={<Skills />} />
