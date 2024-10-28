@@ -1,0 +1,77 @@
+
+body {
+    background-color:#000000;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  padding: 150px;         /* Reduced padding */
+  max-width: 950px;      /* Adjusted width for a centered look */
+  margin: auto;
+}
+
+.about-image img {
+  width: 350px;
+  height: 400px;
+  border-radius: 10%;
+  object-fit: cover;
+  margin-right: 20px;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+}
+
+.about-content {
+    color: white;
+  text-align: left;
+  padding-left: 80px;
+  max-width: 600px;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+}
+
+
+
+.about-content p {
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.primary-color {
+  color: #ffffff; 
+}
+
+.secondary-color {
+  color: #ff5733; 
+}
+
+.third-color {
+  color: #b5b4b4; 
+}
+
+.about-divider {
+  border: none;         /* Remove default border */
+  height: 2px;         /* Set height of the line */
+  background-color: #cccccc5b; /* Set color of the line */
+  margin: 20px 0;      /* Set top and bottom margin */
+}
+
+.about-content h3 {
+  font-size: 1.5rem; /* Adjust size as needed */
+  transition: transform 0.6s; /* Animation duration */
+  perspective: 0px; /* Perspective for 3D effect */
+}
+
+.dissolving-title {
+  opacity: 0; /* Start as invisible */
+  transition: opacity 0.6s; /* Animation duration for fade */
+}
+
+.visible {
+  opacity: 1; /* Make visible when the class is applied */
+}
+
