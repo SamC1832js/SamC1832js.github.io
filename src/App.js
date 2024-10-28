@@ -1,15 +1,22 @@
 import './App.css';
 import { Route, Routes, Link, Navigate, useLocation } from 'react-router-dom'; 
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import React from "react";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
+import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
-  const location = useLocation(); // Now it will work because Router is at root
+  const location = useLocation();
+
+  // Define motion variants for the transition effect
+  const pageTransition = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 }
+  };
 
   return (
     <div className="App">
@@ -29,18 +36,84 @@ function App() {
       </header>
 
       <main>
-        <TransitionGroup>
-          <CSSTransition key={location.key} classNames="fade" timeout={300}>
-            <Routes location={location}>
-              <Route path="/" element={<Navigate to="/home" />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/skills" element={<Skills />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </CSSTransition>
-        </TransitionGroup>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route 
+              path="/" 
+              element={<Navigate to="/home" />} 
+            />
+            <Route 
+              path="/home" 
+              element={
+                <motion.div 
+                  variants={pageTransition} 
+                  initial="initial" 
+                  animate="animate" 
+                  exit="exit" 
+                  transition={{ duration: 0.3 }}
+                >
+                  <Home />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/about" 
+              element={
+                <motion.div 
+                  variants={pageTransition} 
+                  initial="initial" 
+                  animate="animate" 
+                  exit="exit" 
+                  transition={{ duration: 0.3 }}
+                >
+                  <About />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/skills" 
+              element={
+                <motion.div 
+                  variants={pageTransition} 
+                  initial="initial" 
+                  animate="animate" 
+                  exit="exit" 
+                  transition={{ duration: 0.3 }}
+                >
+                  <Skills />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/projects" 
+              element={
+                <motion.div 
+                  variants={pageTransition} 
+                  initial="initial" 
+                  animate="animate" 
+                  exit="exit" 
+                  transition={{ duration: 0.3 }}
+                >
+                  <Projects />
+                </motion.div>
+              } 
+            />
+            <Route 
+              path="/contact" 
+              element={
+                <motion.div 
+                  variants={pageTransition} 
+                  initial="initial" 
+                  animate="animate" 
+                  exit="exit" 
+                  transition={{ duration: 0.3 }}
+                >
+                  <Contact />
+                </motion.div>
+              } 
+            />
+          </Routes>
+        </AnimatePresence>
       </main>
     </div>
   );
