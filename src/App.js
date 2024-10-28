@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom'; 
+import { HashRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom'; 
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import React, { useState } from "react";
 import About from "./components/About";
