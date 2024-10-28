@@ -37,3 +37,28 @@
   color: #61dafb;
 }
 
+.fade-enter {
+  opacity: 0;
+  transform: translateY(20px); /* Optional: Add a vertical translation */
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms; /* Duration for the fade effect */
+}
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  /*Optional:;
+  Addaverticaltranslation*/transition: opacity 400ms, transform 400ms;
+  -webkit-transition: opacity 300ms, transform 300ms;
+  -moz-transition: opacity 300ms, transform 300ms;
+  -ms-transition: opacity 300ms, transform 300ms;
+  -o-transition: opacity 300ms, transform 300ms;
+}
+
+
