@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 
 function App() {
-  const [location, setLocation] = useState("/home"); // Set initial location to "/home"
+  const [location, setLocation] = useState("/home");
   
   return (
     <Router>
