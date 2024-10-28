@@ -1,14 +1,14 @@
 .contact-container {
     background-color: rgb(0, 0, 0); 
     color: white;
-    padding: 150px; /* Reduced padding */
-    max-width: 950px; /* Adjusted width for a centered look */
+    padding: 150px; 
+    max-width: 950px; 
     margin: auto;
 }
 
 .contact-layout {
-    display: flex; /* Use Flexbox for layout */
-    justify-content: space-between; /* Space between columns */
+    display: flex; 
+    justify-content: space-between; 
 }
 
 .contact-info-container {
@@ -46,14 +46,14 @@
 }
 
 .contact-field {
-    flex: 1; /* Allow form to take full height */
-    margin-top: 150px; /* Space above the form */
+    flex: 1; 
+    margin-top: 150px; 
     margin-left: 60px;
 
 }
 
 .form-group {
-    margin-bottom: 15px; /* Space between form fields */
+    margin-bottom: 15px; 
     
 }
 
@@ -74,19 +74,24 @@
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow vertical resizing */
-    height: 100px; /* Default height */
+    resize: vertical; 
+    height: 100px; 
 }
 
 button {
-    background-color: #ff5733; /* Button background color */
-    color: white; /* Button text color */
-    padding: 10px 15px; /* Padding inside button */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer on hover */
+    font-size: 1.2rem;
+    background-color: #ff5733;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
 }
 
 button:hover {
-    background-color: #a83a21; /* Darker blue on hover */
+    background-color: #a83a21; 
 }

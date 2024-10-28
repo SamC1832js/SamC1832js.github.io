@@ -6,8 +6,8 @@ body {
 .about-container {
   display: flex;
   align-items: center;
-  padding: 100px;         /* Reduced padding */
-  max-width: 950px;      /* Adjusted width for a centered look */
+  padding: 100px;        
+  max-width: 950px;      
   margin: auto;
 }
 
@@ -54,24 +54,24 @@ body {
 }
 
 .about-divider {
-  border: none;         /* Remove default border */
-  height: 2px;         /* Set height of the line */
-  background-color: #cccccc5b; /* Set color of the line */
-  margin: 20px 0;      /* Set top and bottom margin */
+  border: none;         
+  height: 2px;         
+  background-color: #cccccc5b; 
+  margin: 20px 0;      
 }
 
 .about-content h3 {
-  font-size: 1.5rem; /* Adjust size as needed */
-  transition: transform 0.6s; /* Animation duration */
-  perspective: 0px; /* Perspective for 3D effect */
+  font-size: 1.5rem; 
+  transition: transform 0.6s; 
+  perspective: 0px; 
 }
 
 .dissolving-title {
-  opacity: 0; /* Start as invisible */
-  transition: opacity 0.6s; /* Animation duration for fade */
+  opacity: 0; 
+  transition: opacity 0.6s; 
 }
 
 .visible {
-  opacity: 1; /* Make visible when the class is applied */
+  opacity: 1;
 }
 

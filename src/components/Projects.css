@@ -44,6 +44,6 @@
 }
 
 .github-link:hover {
-  color: #0056b3; /* Change color on hover */
-  text-decoration: underline; /* Underline on hover */
+  color: #0056b3; 
+  text-decoration: underline; 
 }

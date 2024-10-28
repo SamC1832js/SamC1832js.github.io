@@ -2,35 +2,38 @@
   text-align: center;
 }
 
-/* Navbar container */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px;
-  background-color: #000000; /* Dark background */
+  background-color: #000000;
   color: white;
 }
 
-/* Navbar left (Your name) */
 .navbar-left h1 {
   padding-left: 200px;
   margin: 0;
   font-size: 1.1rem;
 }
 
-/* Navbar right (Buttons) */
 .navbar-right button {
+  font-weight: bold;
   background: none;
   color: white;
   border: none;
   margin: 0 10px;
   font-size: 1.1rem;
   cursor: pointer;
+  border-radius: 7px;
   transition: color 0.3s ease;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
 }
 
 .navbar-right button:hover {
-  color: #61dafb; /* React blue color */
+  color: #61dafb;
 }
 

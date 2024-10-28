@@ -17,17 +17,17 @@ function About() {
 
     useEffect(() => {
     const interval = setInterval(() => {
-      setIsVisible(false); // Start fade out
+      setIsVisible(false); 
       setTimeout(() => {
         setCurrentTitleIndex((prevIndex) =>
           prevIndex === jobTitles.length - 1 ? 0 : prevIndex + 1
         );
-        setIsVisible(true); // Start fade in
-      }, 600); // Match this with the fade out duration
-    }, 3000); // Change title every 3 seconds
+        setIsVisible(true); 
+      }, 600); 
+    }, 3000);
 
-        // Change title every 3 seconds
-    return () => clearInterval(interval); // Cleanup on component unmount
+        
+    return () => clearInterval(interval); 
         }, [jobTitles.length]);
     return (
       <body>

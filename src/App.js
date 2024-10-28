@@ -1,10 +1,10 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Import necessary components
+import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom'; // Import necessary components
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Contact from "./components/Contact"
-import Home from "./components/Home"
+import Contact from "./components/Contact";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
               <h1>Sam C</h1>
             </div>
             <div className="navbar-right">
-              <Link to="/"><button>Home</button></Link>
+              <Link to="/home"><button>Home</button></Link>
               <Link to="/about"><button>About</button></Link>
               <Link to="/skills"><button>Skills</button></Link>
               <Link to="/projects"><button>Projects</button></Link>
@@ -29,11 +29,12 @@ function App() {
         {/* Main content */}
         <main>
           <Routes>
-            <Route path="/" element={<Home />} /> {/* Set Projects as the home page */}
+            <Route path="/" element={<Navigate to="/home" />} /> 
+            <Route path="/home" element={<Home />} /> 
             <Route path="/about" element={<About />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} /> {/* Add Contact component */}
+            <Route path="/contact" element={<Contact />} /> 
           </Routes>
         </main>
       </div>

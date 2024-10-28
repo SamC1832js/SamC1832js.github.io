@@ -19,8 +19,8 @@ function Contact() {
         <div className="contact-container">
             
 
-            <div className="contact-layout"> {/* Added container for flex layout */}
-                <div className="contact-info-container"> {/* Separate container for contact info */}
+            <div className="contact-layout"> 
+                <div className="contact-info-container"> 
                     <h1>Get In <span className="secondary-color">Touch</span></h1>
                     <div className="contact-info">
                         <FaMapMarkerAlt /> {/* Map icon */}
