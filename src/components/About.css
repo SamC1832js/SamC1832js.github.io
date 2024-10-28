@@ -41,6 +41,11 @@ body {
   font-size: 1.1rem;
 }
 
+.about-content button{
+  position:absolute;
+  
+}
+
 .primary-color {
   color: #ffffff; 
 }

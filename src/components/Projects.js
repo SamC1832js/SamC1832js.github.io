@@ -6,7 +6,7 @@ function Projects() {
           <div className="projects-container">
         <h1>Projects</h1>
         <div className="projects-header">
-          <h2>Donation App </h2><a href="https://github.com/SamC-1832/DonationApp" className="github-link" target="_blank" rel="noopener noreferrer"> Github</a>
+          <h2>Donation App</h2><a href="https://github.com/SamC-1832/DonationApp" className="github-link" target="_blank" rel="noopener noreferrer"> Github</a>
         </div>
         <p>•	Strengthened expertise in full-stack development, enhancing skills in API development, database design, and secure payment systems.</p>
             <p>•	Built responsive frontend in Flutter with Stripe integration for payment processing. </p>
