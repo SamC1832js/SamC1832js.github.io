@@ -58,12 +58,16 @@
 }
 .fade-exit-active {
   opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(20px);
   transition: opacity 400ms, transform 400ms;
   -webkit-transition: opacity 400ms, transform 400ms;
   -moz-transition: opacity 400ms, transform 400ms;
   -ms-transition: opacity 400ms, transform 400ms;
   -o-transition: opacity 400ms, transform 400ms;
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  -o-transform: translateY(20px);
 }
 
 
