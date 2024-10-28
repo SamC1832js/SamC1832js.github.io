@@ -6,7 +6,7 @@ body {
 .about-container {
   display: flex;
   align-items: center;
-  padding: 150px;         /* Reduced padding */
+  padding: 100px;         /* Reduced padding */
   max-width: 950px;      /* Adjusted width for a centered look */
   margin: auto;
 }

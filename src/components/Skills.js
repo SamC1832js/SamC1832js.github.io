@@ -3,10 +3,7 @@ import './Skills.css';
 
 function Skills() {
   return (
-      <>
-
-      
-
+    
       <div className="skills-container">
           <h1>Skills</h1>
       <div className="skills-category">
@@ -34,7 +31,6 @@ function Skills() {
         <p>Mandarin, Cantonese, English</p>
       </div>
       </div>
-      </>
   );
 }
 export default Skills;
