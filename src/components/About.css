@@ -3,13 +3,16 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  margin: auto;
-  padding-left: 30vw;
+  padding-left: 22%;
+  transition: all 0.3 ease;
+  -webkit-transition: all 0.3 ease;
+  -moz-transition: all 0.3 ease;
+  -ms-transition: all 0.3 ease;
+  -o-transition: all 0.3 ease;
 }
 
 .about-image img {
-  width: 350px;
-  height: 400px;
+  max-width: 22vw;
   border-radius: 10%;
   object-fit: cover;
   margin-right: 5vw;
@@ -22,7 +25,8 @@
 
 .about-content {
   text-align: left;
-  max-width: 25vw;
+  min-width: 30vw;
+  max-width: 35vw;
 }
 
 .about-content h2 {
@@ -62,4 +66,50 @@
 
 .secondary-color {
   color: var(--secondary--color);
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    width: 100vw;
+    height: auto;
+  }
+
+  .about-image img {
+    max-width: 60vw;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .about-content {
+    max-width: 90vw;
+    padding: 0 5vw;
+    text-align: center; /* Center align text for mobile */
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .about-content button {
+    position: static; /* Remove absolute positioning for mobile */
+    margin-top: 15px;
+  }
+
+  .about-divider {
+    width: 80vw;
+    margin: 10px auto;
+  }
+
+  .about-content h3 {
+    font-size: 1.2rem;
+  }
 }

@@ -1,7 +1,7 @@
 .projects-container {
   height: 100vh;
   width: 100vw;
-  padding-left: 30vw;
+  padding-left: 20vw;
   border-radius: 10px;
   text-align: left;
 }
@@ -50,4 +50,48 @@
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .projects-container {
+    height: auto; /* Allow height to adjust based on content */
+    width: 100vw; /* Take full screen width */
+    padding: 20px; /* Reduce padding for smaller screens */
+    border-radius: 0; /* Remove border-radius for a cleaner mobile view */
+    text-align: center; /* Center-align text for readability */
+  }
+
+  .projects-container h1 {
+    font-size: 28px; /* Reduce heading font size */
+    margin-bottom: 15px;
+  }
+
+  .projects-container p {
+    font-size: 16px; /* Adjust paragraph font size */
+    line-height: 1.5; /* Optimize line height for smaller text */
+  }
+
+  .projects-header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items */
+    width: 100%;
+  }
+
+  .projects-header h2 {
+    font-size: 22px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+
+  .github-link {
+    margin-left: 0; /* Remove left margin for mobile */
+    padding-top: 15px;
+    font-size: 20px;
+  }
+
+  .github-link:hover {
+    bottom: 0; /* Adjust hover effect to be subtle */
+    color: #0056b3;
+  }
 }

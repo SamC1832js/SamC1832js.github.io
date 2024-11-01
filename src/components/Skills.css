@@ -194,17 +194,15 @@
 }
 
 @media screen and (max-width: 768px) {
-  .skills-category-header {
+  .skills-container .skills-category-header {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 
   .skills-category {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 130px));
     gap: 10px;
-    border-color: #010000;
-    border-style: dashed;
   }
 
   .progress .YOE {
