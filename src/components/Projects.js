@@ -75,7 +75,7 @@ function Projects() {
         • Spent 200 hours on tackling data structure and algorithm questions.
       </p>
       <img
-        src="https://leetcode-stats.vercel.app/api?username=sam18328578207&theme=Dark"
+        src="https://leetcode-stats.vercel.app/api?username=sam18328578207&theme=Light"
         alt="leetcode"
       ></img>
       <p>
