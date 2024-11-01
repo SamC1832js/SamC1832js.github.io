@@ -8,35 +8,41 @@
   --color-academic: #0c6247;
   --color-work: #a17819;
   --svg--circle--padding--left: 5px;
+  --button-border-radius: 5px;
+  --skills--header-font-size: 25px;
 }
 
 .skills-container {
+  padding-left: 2vh;
   color: rgb(0, 0, 0);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.skills-container h2 {
-  font-size: 25px;
+.skills-category-header h2 {
+  padding-left: 2vh;
+  font-size: var(--skills--header-font-size);
   color: #010000;
   text-decoration: none;
 }
-
+.skills-category-header {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
 .skills-category {
   display: flex;
   flex-direction: row;
   align-items: start;
-  border-style: dashed;
-  border-color: rgb(9, 10, 11);
   gap: 10px;
 }
 
 .skills-items {
-  border-color: #b72828;
-  border-style: dotted;
   margin: var(--skills--items--margin);
   background-color: rgb(255, 255, 255);
   border-radius: var(--skills--items--border-radius);
@@ -89,9 +95,14 @@
 
 .academic-circle,
 .work-circle {
-  stroke-dashoffset: -30;
+  stroke-dasharray: 226.2;
+  stroke-dashoffset: 226.2;
+  transition: stroke-dashoffset 2s ease;
+  -webkit-transition: stroke-dashoffset 2s ease;
+  -moz-transition: stroke-dashoffset 2s ease;
+  -ms-transition: stroke-dashoffset 2s ease;
+  -o-transition: stroke-dashoffset 2s ease;
 }
-
 .academic-circle {
   stroke: var(--color-academic);
 }
@@ -112,4 +123,43 @@
   width: 100%;
   text-align: left;
   padding-left: 30px;
+}
+
+.skills-container .sort-dropdown {
+  position: relative;
+  margin-bottom: 10px;
+}
+.skills-container .dropdown-menu {
+  width: 120%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.sort-dropdown button {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px;
+  height: 80%;
+  cursor: pointer;
+  border-radius: var(--button-border-radius);
+  -webkit-border-radius: var(--button-border-radius);
+  -moz-border-radius: var(--button-border-radius);
+  -ms-border-radius: var(--button-border-radius);
+  -o-border-radius: var(--button-border-radius);
+}
+.skills-container .dropdown-menu button {
+  display: block;
+  padding: 2px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+.skills-container .dropdown-menu button:hover {
+  background-color: #f0f0f0;
+  width: fit-content;
 }
