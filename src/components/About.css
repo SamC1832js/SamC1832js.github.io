@@ -1,10 +1,8 @@
-
-
 .about-container {
   display: flex;
   align-items: center;
-  padding: 100px;        
-  max-width: 950px;      
+  padding: 100px;
+  max-width: 950px;
   margin: auto;
 }
 
@@ -21,7 +19,6 @@
 }
 
 .about-content {
-    color: white;
   text-align: left;
   padding-left: 80px;
   max-width: 600px;
@@ -31,49 +28,37 @@
   font-size: 2.5rem;
 }
 
-
-
 .about-content p {
   line-height: 1.5;
   font-size: 1.1rem;
 }
 
-.about-content button{
-  position:absolute;
-  
-}
-
-.primary-color {
-  color: #ffffff; 
-}
-
-.secondary-color {
-  color: #ff5733; 
-}
-
-.third-color {
-  color: #b5b4b4; 
+.about-content button {
+  position: absolute;
 }
 
 .about-divider {
-  border: none;         
-  height: 2px;         
-  background-color: #cccccc5b; 
-  margin: 20px 0;      
+  border: none;
+  height: 2px;
+  background-color: #cccccc5b;
+  margin: 20px 0;
 }
 
 .about-content h3 {
-  font-size: 1.5rem; 
-  transition: transform 0.6s; 
-  perspective: 0px; 
+  font-size: 1.5rem;
+  transition: transform 0.6s;
+  perspective: 0px;
 }
 
 .dissolving-title {
-  opacity: 0; 
-  transition: opacity 0.6s; 
+  opacity: 0;
+  transition: opacity 0.6s;
 }
 
 .visible {
   opacity: 1;
 }
 
+.secondary-color {
+  color: var(--secondary--color);
+}
