@@ -1,8 +1,8 @@
 .App {
-  text-align: center;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: rgb(211, 211, 211);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
-
 
 .navbar {
   display: flex;
@@ -39,9 +39,3 @@
 .navbar-right button:hover {
   color: #61dafb;
 }
-
-
-
-
-
-

@@ -76,21 +76,3 @@
     resize: vertical; 
     height: 100px; 
 }
-
-button {
-    font-size: 1.2rem;
-    background-color: #ff5733;
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -ms-border-radius: 7px;
-    -o-border-radius: 7px;
-}
-
-button:hover {
-    background-color: #a83a21; 
-}
