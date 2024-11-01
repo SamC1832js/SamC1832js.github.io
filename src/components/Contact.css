@@ -1,78 +1,100 @@
 .contact-container {
-    color: white;
-    padding: 150px; 
-    max-width: 950px; 
-    margin: auto;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
 }
 
 .contact-layout {
-    display: flex; 
-    justify-content: space-between; 
+  padding-top: 15vh;
+  padding-left: 22vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 .contact-info-container {
-    flex: 1; 
-    margin-right:30px; 
-    max-width: 450px;
+  flex: 1;
+  margin-right: 30px;
+  max-width: 55vh;
 }
 .contact-info-container h1 {
-    text-align: left;
-    padding-bottom: 30px;
+  text-align: left;
+  padding-bottom: 30px;
 }
 
 .contact-info {
-    align-items: center;
-    margin-bottom: 15px;
-    padding: 15px;
-    background-color: #2d2d2d;
-    border-radius: 7px;
-    text-align: left;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -ms-border-radius: 7px;
-    -o-border-radius: 7px;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: var(--primary--color);
+  box-shadow: var(--skills--items--box--shadow);
+  border-radius: 7px;
+  text-align: left;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
 }
 
-.contact-info span, .contact-info a {
-    margin-left: 10px; 
-    color: white; 
-    text-decoration: none; 
+.contact-info span,
+.contact-info a {
+  margin-left: 10px;
+  text-decoration: none;
 }
 
 .contact-info a:hover {
-    text-decoration: underline;
-    color: cadetblue; 
+  text-decoration: underline;
+  color: cadetblue;
 }
 
 .contact-field {
-    flex: 1; 
-    margin-top: 150px; 
-    margin-left: 60px;
-
+  flex: 1;
+  margin-top: 150px;
+  margin-left: 60px;
 }
 
 .form-group {
-    margin-bottom: 15px; 
-    
+  margin-bottom: 15px;
 }
 
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 7px;
-    border:none;
-    background-color: #2d2d2d;
-    color: white;
-    max-width: 400px;
-    outline: none;
-    box-shadow: none;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -ms-border-radius: 7px;
-    -o-border-radius: 7px;
+.form-group input,
+.form-group textarea {
+  width: 45vh;
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  max-width: 400px;
+  outline: none;
+  box-shadow: var(--skills--items--box--shadow);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
 }
 
 .form-group textarea {
-    resize: vertical; 
-    height: 100px; 
+  resize: vertical;
+  height: 10vh;
+}
+
+.contact-field button {
+  font-size: 1.2rem;
+  background-color: var(--primary--color);
+  padding: 15px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+.contact-field button:hover {
+  position: relative;
+  bottom: 3px;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
 }

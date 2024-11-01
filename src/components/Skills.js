@@ -66,6 +66,7 @@ function Skills() {
     ...spokenLanguages,
   ];
 
+  const programmingAndDatabase = [...programmingLanguages, ...databases];
   // Get calculated dasharray values for all data
   const dashArrayData = calculateDashArray(allData);
 
@@ -97,7 +98,7 @@ function Skills() {
     });
   }
   const [animatedYOE, setAnimatedYOE] = useState(
-    programmingLanguages.map((lang) => ({
+    programmingAndDatabase.map((lang) => ({
       name: lang.name,
       academic: 0,
       work: 0,
@@ -111,29 +112,27 @@ function Skills() {
       );
       const workCircle = document.querySelector(`.${name} .work-circle`);
 
-      if (academicCircle) {
+      if (academicCircle && workCircle) {
         academicCircle.style.strokeDasharray = "226.2";
-        academicCircle.style.strokeDashoffset = "226.2";
+        academicCircle.style.strokeDashoffset = (
+          226.2 - academicDashArray
+        ).toString();
+        workCircle.style.strokeDasharray = "226.2";
+        workCircle.style.strokeDashoffset = (226.2 - workDashArray).toString();
         setTimeout(() => {
           academicCircle.style.strokeDashoffset = `${
             226.2 - academicDashArray
           }`;
-        }, 50);
-      }
-      if (workCircle) {
-        workCircle.style.strokeDasharray = "226.2";
-        workCircle.style.strokeDashoffset = "226.2";
-        setTimeout(() => {
           workCircle.style.strokeDashoffset = `${226.2 - workDashArray}`;
-        }, 50);
+        }, 70);
       }
     });
   }, [dashArrayData]);
 
   useEffect(() => {
-    const totalFrames = 120;
+    const totalFrames = 110;
 
-    programmingLanguages.forEach((lang) => {
+    programmingAndDatabase.forEach((lang) => {
       const startAcademic = 0;
       const endAcademic = lang.academicYOE;
       const startWork = 0;
@@ -197,6 +196,14 @@ function Skills() {
     <div className="skills-container">
       <div className="skills-category-header">
         <h2>Programming Languages</h2>
+        <div className="labels">
+          <div className="label academic-label">
+            <span className="color-box"></span> Academic YOE
+          </div>
+          <div className="label work-label">
+            <span className="color-box"></span> Work YOE
+          </div>
+        </div>
         <div className="sort-dropdown">
           <button onClick={() => setShowDropdown(!showDropdown)}>
             {getSortButtonText()}
@@ -287,8 +294,18 @@ function Skills() {
                   ></circle>
                 </svg>
                 <div className="YOE">
-                  <div className="academic">A: {lang.academicYOE}</div>
-                  <div className="work">W: {lang.workYOE}</div>
+                  <div className="academic">
+                    A:{" "}
+                    {animatedYOE
+                      .find((item) => item.name === lang.name)
+                      ?.academic.toFixed(1)}
+                  </div>
+                  <div className="work">
+                    W:{" "}
+                    {animatedYOE
+                      .find((item) => item.name === lang.name)
+                      ?.work.toFixed(1)}
+                  </div>
                 </div>
               </div>
             </div>

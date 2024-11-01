@@ -1,3 +1,9 @@
+:root {
+  --primary--color: #ffffff;
+  --secondary--color: #ff5733;
+  --thrid--color: #343333;
+}
+
 .App {
   background-color: rgb(211, 211, 211);
   width: 100%;
@@ -11,8 +17,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 25px;
-  background-color: #000000;
-  color: white;
   padding-right: 15vw;
 }
 
@@ -25,13 +29,12 @@
 .navbar-right button {
   font-weight: bold;
   background: none;
-  color: white;
   border: none;
   margin: 0 10px;
   font-size: 1.1rem;
   cursor: pointer;
   border-radius: 7px;
-  transition: color 0.3s ease;
+
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
@@ -39,5 +42,11 @@
 }
 
 .navbar-right button:hover {
-  color: #61dafb;
+  position: relative;
+  bottom: 3px;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
 }
