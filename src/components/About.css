@@ -1,9 +1,8 @@
 .about-container {
   display: flex;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-  padding-left: 22%;
+  justify-content: center;
+  padding-top: 7vh;
   transition: all 0.3 ease;
   -webkit-transition: all 0.3 ease;
   -moz-transition: all 0.3 ease;
@@ -12,7 +11,7 @@
 }
 
 .about-image img {
-  max-width: 22vw;
+  max-width: 20vw;
   border-radius: 10%;
   object-fit: cover;
   margin-right: 5vw;
@@ -87,7 +86,7 @@
   .about-content {
     max-width: 90vw;
     padding: 0 5vw;
-    text-align: center; /* Center align text for mobile */
+    text-align: left; /* Center align text for mobile */
   }
 
   .about-content h2 {

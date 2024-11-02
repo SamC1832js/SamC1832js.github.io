@@ -22,6 +22,7 @@ function App() {
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+    document.body.classList.toggle("no-scroll", !showMenu);
   };
 
   return (

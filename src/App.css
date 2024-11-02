@@ -57,23 +57,22 @@ body {
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
   .navbar-right .menu-button {
+    position: relative;
     display: inline-block;
-    z-index: 3;
+    z-index: 10;
   }
 
   .nav-links {
     display: none;
     flex-direction: column;
-    position: fixed;
     align-items: center;
     justify-content: center;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: var(--background--color);
-    border-radius: 0;
-    padding: 20px;
     z-index: 1;
     gap: 15px;
   }
@@ -92,5 +91,9 @@ body {
     position: relative;
     bottom: 3px;
     transition: all 0.3s ease;
+  }
+
+  .no-scroll {
+    overflow: hidden;
   }
 }

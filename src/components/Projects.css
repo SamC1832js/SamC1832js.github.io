@@ -1,6 +1,4 @@
 .projects-container {
-  height: 100vh;
-  width: 100vw;
   padding-left: 20vw;
   border-radius: 10px;
   text-align: left;
@@ -54,27 +52,25 @@
 
 @media screen and (max-width: 768px) {
   .projects-container {
-    height: auto; /* Allow height to adjust based on content */
-    width: 100vw; /* Take full screen width */
-    padding: 20px; /* Reduce padding for smaller screens */
-    border-radius: 0; /* Remove border-radius for a cleaner mobile view */
-    text-align: center; /* Center-align text for readability */
+    height: auto;
+    width: 100vw;
+    padding: 20px;
+    border-radius: 0;
+    text-align: left;
   }
 
   .projects-container h1 {
-    font-size: 28px; /* Reduce heading font size */
+    font-size: 28px;
     margin-bottom: 15px;
   }
 
   .projects-container p {
-    font-size: 16px; /* Adjust paragraph font size */
-    line-height: 1.5; /* Optimize line height for smaller text */
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .projects-header {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center-align items */
-    width: 100%;
+    text-align: left;
   }
 
   .projects-header h2 {
@@ -85,13 +81,13 @@
   }
 
   .github-link {
-    margin-left: 0; /* Remove left margin for mobile */
-    padding-top: 15px;
+    margin-left: 5vw;
+    padding-top: 20px;
     font-size: 20px;
   }
 
   .github-link:hover {
-    bottom: 0; /* Adjust hover effect to be subtle */
+    bottom: 0;
     color: #0056b3;
   }
 }

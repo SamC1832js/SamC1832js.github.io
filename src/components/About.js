@@ -46,9 +46,9 @@ function About() {
           <hr className="about-divider" />
           <p>
             My name is <span className="secondary-color">Cheng Sam Cheang</span>
-            , I go by <span className="secondary-color">Sam</span>.As a Computer
-            Science graduate, I am excited to apply my diverse skills and
-            experiences in a professional environment. My passion is modern
+            , I go by <span className="secondary-color">Sam</span>. As a
+            Computer Science graduate, I am excited to apply my diverse skills
+            and experiences in a professional environment. My passion is modern
             technology, including applications, software development, software
             testing, artificial intelligence, machine learning, and gaming. I am
             continuously seeking innovative opportunities to create impactful

@@ -1,9 +1,3 @@
-.contact-container {
-  width: 100vw;
-  height: 100vh;
-  margin: auto;
-}
-
 .contact-layout {
   padding-top: 15vh;
   padding-left: 26vw;
@@ -42,8 +36,9 @@
 }
 
 .contact-info a:hover {
-  text-decoration: underline;
-  color: cadetblue;
+  position: relative;
+  bottom: 1px;
+  right: 1px;
 }
 
 .contact-field {
@@ -58,7 +53,8 @@
 
 .form-group input,
 .form-group textarea {
-  width: 38vh;
+  min-width: 25vw;
+  max-width: 38vw;
   padding: 10px;
   border-radius: 7px;
   border: none;
@@ -96,4 +92,54 @@
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-container {
+    width: 100vw;
+    height: auto; /* Allow the container height to adjust */
+    padding: 20px; /* Add padding to avoid content touching screen edges */
+    box-sizing: border-box;
+  }
+
+  .contact-layout {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align the content */
+    padding: 10px 0; /* Adjust padding for smaller screens */
+  }
+
+  .contact-info-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: 65vw;
+  }
+
+  .contact-info-container h1 {
+    text-align: center; /* Center-align heading */
+    padding-bottom: 15px;
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  .contact-info {
+    text-align: left; /* Center-align contact items */
+    padding: 10px; /* Adjust padding for smaller screen */
+  }
+
+  .contact-field {
+    margin-top: 20px; /* Adjust margin */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 70vw;
+    padding: 8px; /* Adjust padding */
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .contact-field button {
+    width: 30vw;
+    padding: 10px; /* Adjust padding */
+    font-size: 1rem; /* Adjust font size */
+  }
 }

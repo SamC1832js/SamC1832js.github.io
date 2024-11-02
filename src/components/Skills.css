@@ -14,9 +14,6 @@
 
 .skills-container {
   padding-left: 2vh;
-  color: rgb(0, 0, 0);
-  width: 100vh;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,7 +22,6 @@
 .skills-category-header h2 {
   padding-left: 2vh;
   font-size: var(--skills--header-font-size);
-  color: #010000;
   text-decoration: none;
 }
 .skills-category-header {
@@ -40,7 +36,6 @@
   flex-direction: row;
   align-items: start;
   gap: 10px;
-  width: 100vw;
 }
 
 .skills-items {
