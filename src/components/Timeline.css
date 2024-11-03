@@ -1,0 +1,17 @@
+.timeline h1 {
+  text-align: center;
+  font-size: 4rem;
+}
+.vertical-timeline-element-content.bounce-in {
+  box-shadow: var(--skills--items--box--shadow);
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.vertical-timeline-element-icon.bounce-in {
+  box-shadow: var(--skills--items--box--shadow);
+  background-color: #03d3a0;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease-in-out;
+}

@@ -6,6 +6,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
+import Timeline from "./components/Timeline";
 import { motion, AnimatePresence } from "framer-motion";
 import { ReactComponent as SettingIcon } from "./icon/list-settings-line.svg";
 
@@ -47,6 +48,9 @@ function App() {
               </Link>
               <Link to="/skills">
                 <button onClick={toggleMenu}>Skills</button>
+              </Link>
+              <Link to="/timeline">
+                <button onClick={toggleMenu}>Timeline</button>
               </Link>
               <Link to="/projects">
                 <button onClick={toggleMenu}>Projects</button>
@@ -102,6 +106,20 @@ function App() {
                   transition={{ duration: 0.3 }}
                 >
                   <Skills />
+                </motion.div>
+              }
+            />
+            <Route
+              path="/timeline"
+              element={
+                <motion.div
+                  variants={pageTransition}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.3 }}
+                >
+                  <Timeline />
                 </motion.div>
               }
             />
