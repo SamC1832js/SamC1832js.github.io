@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
 import "./Timeline.css";
 import { ReactComponent as EducationIcon } from "../icon/graduation-cap-line.svg";
 import { ReactComponent as WorkIcon } from "../icon/briefcase-4-fill.svg";
@@ -12,7 +12,9 @@ import "react-vertical-timeline-component/style.min.css";
 function Timeline() {
   let workIconStyles = { background: "#03D3A0" };
   let educationIconStyles = { background: "#f9c74f" };
-
+  useEffect(() => {
+    import("react-vertical-timeline-component/style.min.css");
+  }, []);
   return (
     <div className="timeline">
       <h1>Timeline</h1>
