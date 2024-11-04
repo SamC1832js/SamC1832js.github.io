@@ -30,7 +30,7 @@ export const Footer = () => {
               </a>
             </div>
 
-            <p>&copy; 2024. All Rights Reserved</p>
+            <p>Designed by Sam C &copy;</p>
           </div>
         </div>
       </div>

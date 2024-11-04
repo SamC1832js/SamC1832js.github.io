@@ -3,36 +3,60 @@ import "./Enter.css";
 
 function Enter() {
   const [dashOffsets, setDashOffsets] = useState({
-    circle1: 0,
-    circle2: 0,
-    circle3: 0,
-    circle4: 0,
-    circle5: 0,
+    circle1: 30,
+    circle2: 40,
+    circle3: 50,
+    circle4: 60,
+    circle5: 70,
   });
-
+  const [circleVisible, setCircleVisible] = useState(true);
+  const [backgroundOpacity, setBackgroundOpacity] = useState(1);
   function calHalfDasharray(radius) {
-    return Math.PI * radius; // Half of the circumference
+    return Math.PI * radius;
   }
 
   useEffect(() => {
     const radii = [50, 70, 90, 110, 130];
-    const directions = [-1, -1.4, -1.8, -2.2, -2.6]; // Gradually increasing speed for outer circles
+    const directions = [-1, -1.4, -1.8, -2.2, -2.6];
 
     const intervals = radii.map((radius, index) => {
       const circumference = 2 * Math.PI * radius;
-      return setInterval(() => {
-        setDashOffsets((prevOffsets) => {
-          const newOffset =
-            prevOffsets[`circle${index + 1}`] + directions[index] * 5;
-          return { ...prevOffsets, [`circle${index + 1}`]: newOffset };
-        });
-      }, 50);
+
+      const reverseIndex = radii.length - 1 - index;
+
+      const delay = index * 10;
+
+      return setTimeout(() => {
+        const intervalId = setInterval(() => {
+          setDashOffsets((prevOffsets) => {
+            const newOffset =
+              prevOffsets[`circle${reverseIndex + 1}`] +
+              directions[reverseIndex] * 18;
+            return {
+              ...prevOffsets,
+              [`circle${reverseIndex + 1}`]: newOffset,
+            };
+          });
+        }, 50);
+        return () => clearInterval(intervalId);
+      }, delay);
     });
 
-    return () => intervals.forEach(clearInterval);
+    setTimeout(() => setBackgroundOpacity(0), 2000);
+    const timer = setTimeout(() => setCircleVisible(false), 3000);
+
+    return () => {
+      intervals.forEach(clearTimeout);
+      clearTimeout(timer);
+    };
   }, []);
+
   return (
     <div className="enter-container">
+      <div
+        className="background-overlay"
+        style={{ opacity: backgroundOpacity }}
+      ></div>
       <svg height="300" width="300">
         <circle
           cx="150"
