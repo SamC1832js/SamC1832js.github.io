@@ -25,7 +25,7 @@ function Contact() {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.6 }
     );
 
     if (infoContainerRef.current) observer.observe(infoContainerRef.current);

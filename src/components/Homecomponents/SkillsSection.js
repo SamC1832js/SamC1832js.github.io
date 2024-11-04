@@ -28,7 +28,7 @@ export const SkillsSection = () => {
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.6 }
     );
 
     if (SkillsRef.current) observer.observe(SkillsRef.current);
