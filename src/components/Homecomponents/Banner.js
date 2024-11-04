@@ -13,7 +13,7 @@ export const Banner = () => {
   const [index, setIndex] = useState(1);
   const toRotate = [
     "Software QA Analyst",
-    "Software Engineer In Test",
+    "Software Engineer",
     "Web Developer",
   ];
   const period = 2000;
