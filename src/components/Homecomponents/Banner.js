@@ -1,8 +1,9 @@
 import "./Home.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
+import videoBg from "../assets/video/banner-bg.webm";
 import { Link } from "react-router-dom";
 export const Banner = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,6 +66,10 @@ export const Banner = () => {
 
   return (
     <section className="banner" id="home">
+      <video autoPlay loop muted>
+        <source src={videoBg} type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
       <div className="banner-content">
         <div
           className={`text-content ${

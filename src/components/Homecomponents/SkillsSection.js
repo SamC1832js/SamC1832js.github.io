@@ -7,6 +7,7 @@ import "../Skills.css";
 export const SkillsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(3);
+  const [isInView, setIsInView] = useState(false);
   const carouselRef = useRef(null);
 
   const title = [
@@ -40,7 +41,7 @@ export const SkillsSection = () => {
       };
     });
   }, [title]);
-  console.log(dashArrayData);
+
   const [animatedYOE, setAnimatedYOE] = useState(
     title.map((lang) => ({
       name: lang.name,
@@ -50,46 +51,53 @@ export const SkillsSection = () => {
   );
 
   useEffect(() => {
+    if (!isInView) return;
     const totalFrames = 110;
 
-    title.forEach((lang) => {
-      const startAcademic = 0;
-      const endAcademic = lang.academicYOE;
-      const startWork = 0;
-      const endWork = lang.workYOE;
+    const animateYOE = () => {
+      title.forEach((lang) => {
+        const startAcademic = 0;
+        const endAcademic = lang.academicYOE;
+        const startWork = 0;
+        const endWork = lang.workYOE;
 
-      let frame = 0;
+        let frame = 0;
 
-      const animateYOE = () => {
-        frame++;
-        const progress = frame / totalFrames;
+        const animateYOEFrame = () => {
+          frame++;
+          const progress = frame / totalFrames;
 
-        setAnimatedYOE((prev) =>
-          prev.map((item) =>
-            item.name === lang.name
-              ? {
-                  ...item,
-                  academic: Math.min(
-                    Math.floor(startAcademic + progress * endAcademic),
-                    endAcademic
-                  ),
-                  work: Math.min(
-                    Math.floor(startWork + progress * endWork),
-                    endWork
-                  ),
-                }
-              : item
-          )
-        );
+          setAnimatedYOE((prev) =>
+            prev.map((item) =>
+              item.name === lang.name
+                ? {
+                    ...item,
+                    academic: Math.min(
+                      Math.floor(startAcademic + progress * endAcademic),
+                      endAcademic
+                    ),
+                    work: Math.min(
+                      Math.floor(startWork + progress * endWork),
+                      endWork
+                    ),
+                  }
+                : item
+            )
+          );
 
-        if (frame < totalFrames) {
-          requestAnimationFrame(animateYOE);
-        }
-      };
+          if (frame < totalFrames) {
+            requestAnimationFrame(animateYOEFrame);
+          }
+        };
 
-      requestAnimationFrame(animateYOE);
-    });
-  }, []);
+        requestAnimationFrame(animateYOEFrame);
+      });
+    };
+
+    if (isInView) {
+      animateYOE(); // Start animation only when `carousel-inner` is in view
+    }
+  }, [isInView]);
 
   const updateItemsToShow = () => {
     if (carouselRef.current) {
@@ -106,28 +114,28 @@ export const SkillsSection = () => {
     return () => window.removeEventListener("resize", updateItemsToShow);
   }, []);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => {
-      const remainingItems = title.length - prevIndex;
-      if (remainingItems <= itemsToShow) {
-        return 0;
-      }
-      return prevIndex + 1;
-    });
-  };
-
   useEffect(() => {
-    const interval = setInterval(nextSlide, 3000);
-    return () => clearInterval(interval);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true); // Trigger the animation when element is in view
+          observer.disconnect(); // Stop observing after the first time it comes into view
+        }
+      },
+      { threshold: 0.5 } // Adjust threshold as needed
+    );
+
+    if (carouselRef.current) {
+      observer.observe(carouselRef.current);
+    }
+
+    return () => {
+      if (carouselRef.current) observer.unobserve(carouselRef.current);
+    };
   }, []);
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => {
-      return prevIndex === 0 ? title.length - itemsToShow : prevIndex - 1;
-    });
-  };
-
   useEffect(() => {
+    if (!isInView) return;
     dashArrayData.forEach(({ name, academicDashArray, workDashArray }) => {
       // Select all academic and work circles with the given name
       const academicCircles = document.querySelectorAll(
@@ -151,7 +159,28 @@ export const SkillsSection = () => {
         workCircle.style.strokeDashoffset = (226.2 - workDashArray).toString();
       });
     });
-  }, [dashArrayData]);
+  }, [isInView, dashArrayData]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => {
+      const remainingItems = title.length - prevIndex;
+      if (remainingItems <= itemsToShow) {
+        return 0;
+      }
+      return prevIndex + 1;
+    });
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => {
+      return prevIndex === 0 ? title.length - itemsToShow : prevIndex - 1;
+    });
+  };
 
   const displayItems = () => {
     const itemWidth = 140;
@@ -215,13 +244,11 @@ export const SkillsSection = () => {
           optimization projects.
         </p>
 
-        <div className="carousel">
+        <div className="carousel" ref={carouselRef}>
           <button className="carousel-control prev" onClick={prevSlide}>
             <img src={arrow1} alt="Previous" />
           </button>
-          <div className="carousel-inner">
-            <div className="skills-category">{displayItems()}</div>
-          </div>
+          <div className="carousel-inner">{displayItems()}</div>
           <button className="carousel-control next" onClick={nextSlide}>
             <img src={arrow2} alt="Next" />
           </button>
