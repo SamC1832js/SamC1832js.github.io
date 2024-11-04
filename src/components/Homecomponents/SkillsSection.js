@@ -226,11 +226,6 @@ export const SkillsSection = () => {
           </button>
         </div>
       </div>
-      <img
-        className="background-image-left"
-        src={colorSharp}
-        alt="Background"
-      />
     </section>
   );
 };

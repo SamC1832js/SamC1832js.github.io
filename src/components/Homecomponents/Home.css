@@ -102,8 +102,10 @@
 }
 
 .skill-bx {
-  border-style: dashed;
-  border-color: #000;
+  border-color: rgb(240, 240, 240);
+  border-style: solid;
+  background-color: rgb(240, 240, 240);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
   border-radius: 64px;
   text-align: center;
   margin-top: -2vh;
@@ -135,8 +137,6 @@
 }
 
 .carousel-inner {
-  border-style: dashed;
-  border-color: #000;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -146,20 +146,16 @@
 }
 
 .carousel-control {
-  background: black;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
   border: none;
   position: absolute;
+  background: transparent;
   top: 50%;
-
   transform: translateY(-50%);
   cursor: pointer;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
 }
 .carousel-inner .skills-category {
   display: flex;
@@ -182,6 +178,8 @@
 .carousel-control img {
   width: 60%;
   height: auto;
+  filter: invert(1);
+  -webkit-filter: invert(1);
 }
 
 .carousel-control.prev {
@@ -190,14 +188,6 @@
 
 .carousel-control.next {
   right: 10px;
-}
-
-.background-image-left {
-  top: 28%;
-  position: absolute;
-  bottom: 0;
-  width: 40%;
-  z-index: -4;
 }
 
 /************ Projects Css ************/
@@ -316,7 +306,7 @@
   letter-spacing: 0.8px;
 }
 .background-image-right {
-  top: 20%;
+  top: 50%;
   position: absolute;
   bottom: 0;
   width: 35%;
