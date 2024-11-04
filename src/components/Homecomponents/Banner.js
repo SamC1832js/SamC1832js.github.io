@@ -88,8 +88,8 @@ export const Banner = () => {
             </span>
           </h1>
           <p>
-            I am a Computer Science graduate passionate about optimizing
-            software quality and looking forward to applying my skills to create
+            I am Computer Science graduate passionate about optimizing software
+            quality and looking forward to applying my skills to create
             impactful solutions. I excel in using modern tools and development
             practices to build efficient, scalable, and reliable applications. I
             thrive in dynamic environments, and committed to continuous learning

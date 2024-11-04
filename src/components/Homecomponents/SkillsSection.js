@@ -179,7 +179,7 @@ export const SkillsSection = () => {
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => {
-      if (prevIndex == 0) {
+      if (prevIndex === 0) {
         return title.length - itemsToShow;
       }
       return prevIndex - 1;

@@ -1,3 +1,29 @@
+.home-container .contact-info-container {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+  -webkit-transform: translateX(-50px);
+  -moz-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  -o-transform: translateX(-50px);
+}
+
+.home-container .contact-field {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1s ease, transform 1s ease;
+  -webkit-transform: translateX(50px);
+  -moz-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  -o-transform: translateX(50px);
+}
+
+.home-container .contact-info-container.fadeIn,
+.home-container .contact-field.fadeIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /************ Banner Css ************/
 .banner {
   position: relative;

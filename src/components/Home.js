@@ -1,5 +1,5 @@
 //import { NavBar } from "./Homecomponents/NavBar";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Banner } from "./Homecomponents/Banner";
 import { SkillsSection } from "./Homecomponents/SkillsSection";
 //import { Contact } from "./components/Contact";
@@ -13,6 +13,7 @@ function Home() {
       <SkillsSection />
       <Timeline />
       <Contact />
+
       <Footer />
     </div>
   );

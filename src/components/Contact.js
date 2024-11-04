@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   FaMapMarkerAlt,
   FaLinkedin,
@@ -12,10 +12,33 @@ function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const infoContainerRef = useRef(null);
+  const fieldContainerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fadeIn");
+            observer.unobserve(entry.target); // Stop observing once animation has triggered
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    // Observe each element if the ref is attached
+    if (infoContainerRef.current) observer.observe(infoContainerRef.current);
+    if (fieldContainerRef.current) observer.observe(fieldContainerRef.current);
+
+    // Clean up observer on component unmount
+    return () => observer.disconnect();
+  }, []);
   return (
     <div className="contact-container">
       <div className="contact-layout">
-        <div className="contact-info-container">
+        <div ref={infoContainerRef} className="contact-info-container">
           <h1>
             Get In <span className="secondary-color">Touch</span>
           </h1>
@@ -53,6 +76,7 @@ function Contact() {
           </div>
         </div>
         <form
+          ref={fieldContainerRef}
           className="contact-field"
           action="https://usebasin.com/f/a4685fb1c06e"
           method="POST"

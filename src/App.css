@@ -15,22 +15,35 @@ html {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 88.9%;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px;
   padding-right: 10vw;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  -webkit-transition: opacity 0.3s ease, background-color 0.3s ease;
+  -moz-transition: opacity 0.3s ease, background-color 0.3s ease;
+  -ms-transition: opacity 0.3s ease, background-color 0.3s ease;
+  -o-transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 88.9%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  -webkit-transition: opacity 0.3s ease, background-color 0.3s ease;
+  -moz-transition: opacity 0.3s ease, background-color 0.3s ease;
+  -ms-transition: opacity 0.3s ease, background-color 0.3s ease;
+  -o-transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar:not(.sticky) {
+  opacity: 0.7;
 }
 
 .navbar-left img {
