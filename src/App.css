@@ -18,9 +18,10 @@ html {
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 88.9%;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
 .navbar {
@@ -29,7 +30,7 @@ html {
   align-items: center;
   padding: 18px;
   padding-right: 10vw;
-  background-color: transparent;
+  transition: all 0.3s ease;
 }
 
 .navbar-left img {
