@@ -34,24 +34,30 @@ function App() {
   };
 
   useEffect(() => {
-    if (loading) return;
-    const navbar = document.querySelector(".navbar");
-    const stickyOffset = navbar.offsetTop;
+    if (!loading) {
+      // Only run this effect when loading is complete
+      const navbar = document.querySelector(".navbar");
 
-    const handleScroll = () => {
-      if (window.scrollY > stickyOffset) {
-        navbar.classList.add("sticky");
-      } else {
-        navbar.classList.remove("sticky");
+      // Check if navbar exists before accessing its properties
+      if (navbar) {
+        const stickyOffset = navbar.offsetTop;
+
+        const handleScroll = () => {
+          if (window.scrollY > stickyOffset) {
+            navbar.classList.add("sticky");
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
       }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    }
+  }, [loading]);
   useEffect(() => {
     let scrollTarget = window.scrollY;
     let isAnimating = false;
