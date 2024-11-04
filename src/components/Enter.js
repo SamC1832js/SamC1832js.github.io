@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Enter.css";
 
 function Enter() {
@@ -9,44 +9,40 @@ function Enter() {
     circle4: 60,
     circle5: 70,
   });
-  const [circleVisible, setCircleVisible] = useState(true);
   const [backgroundOpacity, setBackgroundOpacity] = useState(1);
-  function calHalfDasharray(radius) {
+
+  const radii = [50, 70, 90, 110, 130];
+  const directions = [-1.03, -1.45, -1.88, -2.3, -2.73];
+
+  function calculateDashArray(radius) {
     return Math.PI * radius;
   }
-
   useEffect(() => {
-    const radii = [50, 70, 90, 110, 130];
-    const directions = [-1, -1.4, -1.8, -2.2, -2.6];
+    const animateCircle = async (circleIndex) => {
+      const direction = directions[circleIndex];
+      const key = `circle${circleIndex + 1}`;
+      let speed = 4;
+      function animate() {
+        setDashOffsets((prevOffsets) => ({
+          ...prevOffsets,
+          [key]: prevOffsets[key] + direction * speed,
+        }));
+        requestAnimationFrame(animate);
+      }
 
-    const intervals = radii.map((radius, index) => {
-      const circumference = 2 * Math.PI * radius;
+      animate();
+    };
 
-      const reverseIndex = radii.length - 1 - index;
-
-      const delay = index * 70;
-
-      return setTimeout(() => {
-        const intervalId = setInterval(() => {
-          setDashOffsets((prevOffsets) => {
-            const newOffset =
-              prevOffsets[`circle${reverseIndex + 1}`] +
-              directions[reverseIndex] * 24;
-            return {
-              ...prevOffsets,
-              [`circle${reverseIndex + 1}`]: newOffset,
-            };
-          });
-        }, 50);
-        return () => clearInterval(intervalId);
-      }, delay);
-    });
+    (async function startAnimation() {
+      for (let i = radii.length; i >= 0; i--) {
+        animateCircle(i);
+        await new Promise((resolve) => setTimeout(resolve, 20));
+      }
+    })();
 
     setTimeout(() => setBackgroundOpacity(0), 1500);
 
-    return () => {
-      intervals.forEach(clearTimeout);
-    };
+    return () => cancelAnimationFrame(animateCircle);
   }, []);
 
   return (
@@ -55,47 +51,18 @@ function Enter() {
         className="background-overlay"
         style={{ opacity: backgroundOpacity }}
       ></div>
-      <svg height="300" width="300">
-        <circle
-          cx="150"
-          cy="150"
-          r="50"
-          className="circle1"
-          strokeDasharray={calHalfDasharray(50)}
-          strokeDashoffset={dashOffsets.circle1}
-        ></circle>
-        <circle
-          cx="150"
-          cy="150"
-          r="70"
-          className="circle2"
-          strokeDasharray={calHalfDasharray(70)}
-          strokeDashoffset={dashOffsets.circle2}
-        ></circle>
-        <circle
-          cx="150"
-          cy="150"
-          r="90"
-          className="circle3"
-          strokeDasharray={calHalfDasharray(90)}
-          strokeDashoffset={dashOffsets.circle3}
-        ></circle>
-        <circle
-          cx="150"
-          cy="150"
-          r="110"
-          className="circle4"
-          strokeDasharray={calHalfDasharray(110)}
-          strokeDashoffset={dashOffsets.circle4}
-        ></circle>
-        <circle
-          cx="150"
-          cy="150"
-          r="130"
-          className="circle5"
-          strokeDasharray={calHalfDasharray(130)}
-          strokeDashoffset={dashOffsets.circle5}
-        ></circle>
+      <svg height="300" width="300" className="circle-overlay">
+        {radii.map((radius, index) => (
+          <circle
+            key={index}
+            cx="150"
+            cy="150"
+            r={radius}
+            className={`circle${index + 1}`}
+            strokeDasharray={calculateDashArray(radius)}
+            strokeDashoffset={dashOffsets[`circle${index + 1}`]}
+          ></circle>
+        ))}
       </svg>
     </div>
   );
