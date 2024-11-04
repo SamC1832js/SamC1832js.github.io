@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Timeline from "./components/Timeline";
 import { motion, AnimatePresence } from "framer-motion";
 import { ReactComponent as SettingIcon } from "./icon/list-settings-line.svg";
+import logo from "./components/assets/img/logo.png";
 
 function App() {
   const location = useLocation();
@@ -31,7 +32,7 @@ function App() {
       <header className="App-header">
         <nav className="navbar">
           <div className="navbar-left">
-            <h1>Sam C</h1>
+            <img src={logo} alt="Logo" />
           </div>
           <div className="navbar-right">
             <button className="menu-button" onClick={toggleMenu}>
@@ -56,7 +57,7 @@ function App() {
                 <button onClick={toggleMenu}>Projects</button>
               </Link>
               <Link to="/contact">
-                <button onClick={toggleMenu}>Contact</button>
+                <button onClick={toggleMenu}>Connect</button>
               </Link>
             </div>
           </div>

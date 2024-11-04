@@ -209,9 +209,9 @@ export const SkillsSection = () => {
       <div className="skill-bx">
         <h2>Skills</h2>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
-          <br /> Lorem Ipsum has been the industry's standard dummy text.
+          I am dedicated to creating high-quality software. I have experience in
+          many areas of software development, including quality assurance,
+          front-end and back-end development, and optimization projects.
         </p>
 
         <div className="carousel">

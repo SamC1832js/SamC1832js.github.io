@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import { Banner } from "./Homecomponents/Banner";
 import { SkillsSection } from "./Homecomponents/SkillsSection";
-import { Projects } from "./Homecomponents/Projects";
 //import { Contact } from "./components/Contact";
 import { Footer } from "./Homecomponents/Footer";
 function Home() {
@@ -10,7 +9,6 @@ function Home() {
     <div>
       <Banner />
       <SkillsSection />
-      <Projects />
       <Footer />
     </div>
   );

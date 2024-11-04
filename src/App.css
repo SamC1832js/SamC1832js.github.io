@@ -17,14 +17,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px;
+  padding: 18px;
   padding-right: 10vw;
 }
 
-.navbar-left h1 {
-  padding-left: 15vw;
-  margin: 0;
-  font-size: 1.3rem;
+.navbar-left img {
+  margin-left: 10vw;
+  width: 25%;
 }
 
 .navbar-right {
@@ -37,7 +36,6 @@ body {
 .nav-links {
   display: flex;
 }
-
 .navbar-right button {
   font-weight: bold;
   background: none;
