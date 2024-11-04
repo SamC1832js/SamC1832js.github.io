@@ -1,19 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.b0f35314.css",
-    "main.js": "/static/js/main.f2d81758.js",
+    "main.css": "/static/css/main.10afc086.css",
+    "main.js": "/static/js/main.00a48626.js",
     "static/js/453.eb3479b4.chunk.js": "/static/js/453.eb3479b4.chunk.js",
+    "static/media/bg.png": "/static/media/bg.170d2012d4a2b3aa3cb4.png",
     "static/media/headshot.png": "/static/media/headshot.862219da7bcec7cdd048.png",
+    "static/media/color-sharp.png": "/static/media/color-sharp.bea361cfef80fefc2d1e.png",
+    "static/media/logo.png": "/static/media/logo.5d48bda4ef1b60638832.png",
+    "static/media/header-img.svg": "/static/media/header-img.b44dfb64a14eb2f0207f390251b3055f.svg",
+    "static/media/nav-icon3.svg": "/static/media/nav-icon3.08b285abb8e118b52637efa5d65c5367.svg",
     "static/media/list-settings-line.svg": "/static/media/list-settings-line.bce0d169f821963de8c7406e466caae2.svg",
     "index.html": "/index.html",
+    "static/media/nav-icon1.svg": "/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
+    "static/media/arrow2.svg": "/static/media/arrow2.3d9522b6fd8f2464b7200ebf2c1bb09a.svg",
+    "static/media/arrow1.svg": "/static/media/arrow1.0c89b5b635adf255c2822c630aaa6ccf.svg",
     "static/media/graduation-cap-line.svg": "/static/media/graduation-cap-line.422d8a84888d074bc0ab42f63b47c692.svg",
+    "static/media/nav-icon2.svg": "/static/media/nav-icon2.178f497aa17b70c42df2a1a8c926ed01.svg",
     "static/media/briefcase-4-fill.svg": "/static/media/briefcase-4-fill.fa2c06227d382d29ac386e7dc6a82498.svg",
-    "main.b0f35314.css.map": "/static/css/main.b0f35314.css.map",
-    "main.f2d81758.js.map": "/static/js/main.f2d81758.js.map",
+    "main.10afc086.css.map": "/static/css/main.10afc086.css.map",
+    "main.00a48626.js.map": "/static/js/main.00a48626.js.map",
     "453.eb3479b4.chunk.js.map": "/static/js/453.eb3479b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0f35314.css",
-    "static/js/main.f2d81758.js"
+    "static/css/main.10afc086.css",
+    "static/js/main.00a48626.js"
   ]
 }
