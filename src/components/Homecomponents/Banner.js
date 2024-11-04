@@ -98,7 +98,7 @@ export const Banner = () => {
           <Link to="/contact">
             <button className="banner-button">
               <span className="text">Let’s Connect</span>{" "}
-              <ArrowRightCircle size={25} />
+              <ArrowRightCircle className="custom-arrow" size={25} />
             </button>
           </Link>
         </div>
