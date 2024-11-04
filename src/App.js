@@ -63,7 +63,7 @@ function App() {
     };
 
     const handleScroll = (event) => {
-      scrollTarget += event.deltaY * 5; // Adjust multiplier for speed
+      scrollTarget += event.deltaY * 5;
       scrollTarget = Math.max(
         0,
         Math.min(scrollTarget, document.body.scrollHeight - window.innerHeight)

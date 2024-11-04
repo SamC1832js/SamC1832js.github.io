@@ -1,0 +1,46 @@
+.enter-container circle {
+  z-index: 50;
+  fill: none;
+  stroke-width: 7;
+  transition: all 2s ease;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  -o-transition: all 2s ease;
+}
+
+.enter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #202020;
+}
+
+svg {
+  overflow: visible;
+}
+
+.circle1 {
+  stroke: #d15b5b;
+}
+
+.circle2 {
+  stroke: #5cad71;
+}
+
+.circle3 {
+  stroke: #5b8fb9;
+}
+
+.circle4 {
+  stroke: #a476c1;
+}
+
+.circle5 {
+  stroke: #d6a554;
+}
+
+.circle6 {
+  stroke: #59b3b3;
+}

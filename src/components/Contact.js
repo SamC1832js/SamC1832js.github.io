@@ -21,18 +21,16 @@ function Contact() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("fadeIn");
-            observer.unobserve(entry.target); // Stop observing once animation has triggered
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.2 }
     );
 
-    // Observe each element if the ref is attached
     if (infoContainerRef.current) observer.observe(infoContainerRef.current);
     if (fieldContainerRef.current) observer.observe(fieldContainerRef.current);
 
-    // Clean up observer on component unmount
     return () => observer.disconnect();
   }, []);
   return (

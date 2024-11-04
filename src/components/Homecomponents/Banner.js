@@ -6,7 +6,6 @@ import "animate.css";
 import videoBg from "../assets/video/banner-bg.webm";
 import { Link } from "react-router-dom";
 export const Banner = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [text, setText] = useState("");
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -18,7 +17,27 @@ export const Banner = () => {
     "Web Developer",
   ];
   const period = 2000;
+  const bannerTextRef = useRef(null);
+  const bannerImgRef = useRef(null);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fadeIn");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (bannerTextRef.current) observer.observe(bannerTextRef.current);
+    if (bannerImgRef.current) observer.observe(bannerImgRef.current);
+
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
@@ -56,14 +75,6 @@ export const Banner = () => {
     }
   };
 
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 100) setIsVisible(true);
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <section className="banner" id="home">
       <video autoPlay loop muted>
@@ -71,11 +82,7 @@ export const Banner = () => {
         Your browser does not support the video tag.
       </video>
       <div className="banner-content">
-        <div
-          className={`text-content ${
-            isVisible ? "animate__animated animate__fadeIn" : ""
-          }`}
-        >
+        <div ref={bannerTextRef} className="text-content">
           <span className="tagline">Welcome to my Portfolio</span>
           <h1>
             {`Hi! I'm Sam`}{" "}
@@ -114,11 +121,7 @@ export const Banner = () => {
             </button>
           </div>
         </div>
-        <div
-          className={`image-content ${
-            isVisible ? "animate__animated animate__zoomIn" : ""
-          }`}
-        >
+        <div ref={bannerImgRef} className="image-content">
           <img src={headerImg} alt="Header Img" />
         </div>
       </div>
