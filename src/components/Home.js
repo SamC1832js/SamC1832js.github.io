@@ -6,7 +6,7 @@ import { SkillsSection } from "./Homecomponents/SkillsSection";
 import { Footer } from "./Homecomponents/Footer";
 function Home() {
   return (
-    <div>
+    <div className="home-container">
       <Banner />
       <SkillsSection />
       <Footer />

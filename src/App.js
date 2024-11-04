@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes, Link, Navigate, useLocation } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -26,7 +26,41 @@ function App() {
     setShowMenu(!showMenu);
     document.body.classList.toggle("no-scroll", !showMenu);
   };
+  useEffect(() => {
+    let scrollTarget = window.scrollY;
+    let isAnimating = false;
 
+    const smoothScroll = () => {
+      isAnimating = true;
+      const currentScroll = window.scrollY;
+      const distance = scrollTarget - currentScroll;
+
+      if (Math.abs(distance) > 1) {
+        window.scrollTo(0, currentScroll + distance * 0.1); // Smooth out the movement
+        requestAnimationFrame(smoothScroll);
+      } else {
+        isAnimating = false; // Stop animation when close to target
+      }
+    };
+
+    const handleScroll = (event) => {
+      scrollTarget += event.deltaY * 5; // Adjust multiplier for speed
+      scrollTarget = Math.max(
+        0,
+        Math.min(scrollTarget, document.body.scrollHeight - window.innerHeight)
+      );
+
+      if (!isAnimating) {
+        requestAnimationFrame(smoothScroll);
+      }
+    };
+
+    window.addEventListener("wheel", handleScroll);
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+    };
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
