@@ -209,7 +209,7 @@ export const SkillsSection = () => {
       <div className="skill-bx">
         <h2>Skills</h2>
         <p>
-          I am dedicated to creating high-quality software and I have experience
+          I am dedicated to creating high-quality software and I am experienced
           in many areas of software development, <br />
           including quality assurance, front-end and back-end development, and
           optimization projects.
