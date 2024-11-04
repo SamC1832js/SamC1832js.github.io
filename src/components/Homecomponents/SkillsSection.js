@@ -135,11 +135,11 @@ export const SkillsSection = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsInView(true); // Trigger the animation when element is in view
-          observer.disconnect(); // Stop observing after the first time it comes into view
+          setIsInView(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.5 } // Adjust threshold as needed
+      { threshold: 0.5 }
     );
 
     if (carouselRef.current) {

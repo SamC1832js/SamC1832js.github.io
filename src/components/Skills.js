@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, Fragment, useRef } from "react";
 import "./Skills.css";
 
 function Skills() {
@@ -57,6 +57,27 @@ function Skills() {
     { name: "Cantonese", academicYOE: 0, workYOE: 0 },
     { name: "English", academicYOE: 0, workYOE: 0 },
   ];
+  const [isInView, setIsInView] = useState(false);
+  const skillRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (skillRef.current) {
+      observer.observe(skillRef.current);
+    }
+
+    return () => {
+      if (skillRef.current) observer.unobserve(skillRef.current);
+    };
+  }, []);
   // Combine all data into a single array
   const allData = [
     ...programmingLanguages,
@@ -106,6 +127,7 @@ function Skills() {
   );
 
   useEffect(() => {
+    if (!isInView) return;
     dashArrayData.forEach(({ name, academicDashArray, workDashArray }) => {
       const academicCircle = document.querySelector(
         `.${name} .academic-circle`
@@ -127,9 +149,10 @@ function Skills() {
         }, 70);
       }
     });
-  }, [dashArrayData]);
+  }, [isInView, dashArrayData]);
 
   useEffect(() => {
+    if (!isInView) return;
     const totalFrames = 110;
 
     programmingAndDatabase.forEach((lang) => {
@@ -166,7 +189,7 @@ function Skills() {
 
       requestAnimationFrame(animateYOE);
     });
-  }, []);
+  }, [isInView]);
 
   const sortedLanguages = [...programmingLanguages].sort((a, b) => {
     let aYOE =
@@ -193,7 +216,7 @@ function Skills() {
     return `Sort by: ${criteriaText} YOE: ${orderText}`;
   };
   return (
-    <div className="skills-container">
+    <div ref={skillRef} className="skills-container">
       <div className="skills-category-header">
         <h2>Programming Languages</h2>
         <div className="labels">
