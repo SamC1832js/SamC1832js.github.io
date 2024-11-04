@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.07199f07.css",
-    "main.js": "/static/js/main.0f3e593c.js",
+    "main.css": "/static/css/main.9106aed0.css",
+    "main.js": "/static/js/main.f7ec97e6.js",
     "static/js/453.eb3479b4.chunk.js": "/static/js/453.eb3479b4.chunk.js",
     "static/media/banner-bg.webm": "/static/media/banner-bg.630f72f2dba48a0ef624.webm",
     "static/media/headshot.png": "/static/media/headshot.862219da7bcec7cdd048.png",
     "static/media/color-sharp.png": "/static/media/color-sharp.bea361cfef80fefc2d1e.png",
-    "static/media/logo.png": "/static/media/logo.5d48bda4ef1b60638832.png",
+    "static/media/logo.png": "/static/media/logo.a4591860e69bfe3c3cda.png",
     "static/media/header-img.svg": "/static/media/header-img.b44dfb64a14eb2f0207f390251b3055f.svg",
     "static/media/nav-icon3.svg": "/static/media/nav-icon3.08b285abb8e118b52637efa5d65c5367.svg",
     "static/media/list-settings-line.svg": "/static/media/list-settings-line.bce0d169f821963de8c7406e466caae2.svg",
@@ -17,12 +17,12 @@
     "static/media/graduation-cap-line.svg": "/static/media/graduation-cap-line.422d8a84888d074bc0ab42f63b47c692.svg",
     "static/media/nav-icon2.svg": "/static/media/nav-icon2.178f497aa17b70c42df2a1a8c926ed01.svg",
     "static/media/briefcase-4-fill.svg": "/static/media/briefcase-4-fill.fa2c06227d382d29ac386e7dc6a82498.svg",
-    "main.07199f07.css.map": "/static/css/main.07199f07.css.map",
-    "main.0f3e593c.js.map": "/static/js/main.0f3e593c.js.map",
+    "main.9106aed0.css.map": "/static/css/main.9106aed0.css.map",
+    "main.f7ec97e6.js.map": "/static/js/main.f7ec97e6.js.map",
     "453.eb3479b4.chunk.js.map": "/static/js/453.eb3479b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.07199f07.css",
-    "static/js/main.0f3e593c.js"
+    "static/css/main.9106aed0.css",
+    "static/js/main.f7ec97e6.js"
   ]
 }
