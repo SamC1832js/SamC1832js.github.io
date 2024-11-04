@@ -104,7 +104,8 @@ export const SkillsSection = () => {
       const carouselWidth = carouselRef.current.offsetWidth;
       const itemWidthWithMargin = 113 + 2 * (window.innerWidth * 0.02); // Adjust for item width and margin
       const calculatedItems = Math.floor(carouselWidth / itemWidthWithMargin);
-      setItemsToShow(Math.max(calculatedItems, 1)); // Ensure at least 1 item is shown
+      const limitedItems = Math.min(Math.max(calculatedItems, 1), 3);
+      setItemsToShow(limitedItems);
     }
   };
 
@@ -178,7 +179,10 @@ export const SkillsSection = () => {
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => {
-      return prevIndex === 0 ? title.length - itemsToShow : prevIndex - 1;
+      if (prevIndex == 0) {
+        return title.length - itemsToShow;
+      }
+      return prevIndex - 1;
     });
   };
 
