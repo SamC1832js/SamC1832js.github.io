@@ -32,7 +32,7 @@ function App() {
     const stickyOffset = navbar.offsetTop;
 
     const handleScroll = () => {
-      if (window.pageYOffset > stickyOffset) {
+      if (window.scrollY > stickyOffset) {
         navbar.classList.add("sticky");
       } else {
         navbar.classList.remove("sticky");
@@ -97,9 +97,9 @@ function App() {
               <Link to="/home">
                 <button onClick={toggleMenu}>Home</button>
               </Link>
-              <Link to="/about">
+              {/*<Link to="/about">
                 <button onClick={toggleMenu}>About</button>
-              </Link>
+              </Link>*/}
               <Link to="/skills">
                 <button onClick={toggleMenu}>Skills</button>
               </Link>

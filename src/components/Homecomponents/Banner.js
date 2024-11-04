@@ -101,6 +101,18 @@ export const Banner = () => {
               <ArrowRightCircle className="custom-arrow" size={25} />
             </button>
           </Link>
+          <div>
+            <button className="banner-button">
+              <a
+                href="https://drive.google.com/file/d/1-9K6OjFtbtdyLGqWRD6Sn-U2sdLvXVvf/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="text">Resume Download</span>
+                <ArrowRightCircle className="custom-arrow" size={25} />
+              </a>
+            </button>
+          </div>
         </div>
         <div
           className={`image-content ${

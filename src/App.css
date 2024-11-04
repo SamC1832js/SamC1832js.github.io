@@ -38,10 +38,6 @@ html {
   width: 25%;
 }
 
-.navbar-right {
-  position: relative;
-}
-
 .navbar-right .menu-button {
   display: none;
 }
