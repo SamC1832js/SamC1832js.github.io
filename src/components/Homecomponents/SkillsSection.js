@@ -8,8 +8,6 @@ export const SkillsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(3);
   const [isInView, setIsInView] = useState(false);
-  const carouselRef = useRef(null);
-
   const title = [
     { name: "Software QA Analyst", academicYOE: 95, workYOE: 0 },
     { name: "Software Engineer", academicYOE: 85, workYOE: 0 },
@@ -18,7 +16,25 @@ export const SkillsSection = () => {
     { name: "Software Engineer", academicYOE: 85, workYOE: 0 },
     { name: "Web Developer", academicYOE: 90, workYOE: 0 },
   ];
+  const SkillsRef = useRef(null);
+  const carouselRef = useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fadeIn");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
 
+    if (SkillsRef.current) observer.observe(SkillsRef.current);
+
+    return () => observer.disconnect();
+  }, []);
   const dashArrayData = useMemo(() => {
     const fullDashArray = 200;
 
@@ -239,7 +255,7 @@ export const SkillsSection = () => {
 
   return (
     <section className="skill" id="skills">
-      <div className="skill-bx">
+      <div ref={SkillsRef} className="skill-bx">
         <h2>Skills</h2>
         <p>
           I am dedicated to creating high-quality software and I am experienced

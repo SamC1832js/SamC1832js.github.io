@@ -1,27 +1,31 @@
 .home-container .contact-info-container {
-  opacity: 0;
-  transform: translateX(-50px);
+  opacity: 0.7;
+  transform: translateX(-50px) scale(1.1);
   transition: opacity 1s ease, transform 1s ease;
-  -webkit-transform: translateX(-50px);
-  -moz-transform: translateX(-50px);
-  -ms-transform: translateX(-50px);
-  -o-transform: translateX(-50px);
+  -webkit-transform: translateX(-50px) scale(1.1);
+  -moz-transform: translateX(-50px) scale(1.1);
+  -ms-transform: translateX(-50px) scale(1.1);
+  -o-transform: translateX(-50px) scale(1.1);
 }
 
 .home-container .contact-field {
-  opacity: 0;
-  transform: translateX(50px);
+  opacity: 0.7;
+  transform: translateX(50px) scale(1.1);
   transition: opacity 1s ease, transform 1s ease;
-  -webkit-transform: translateX(50px);
-  -moz-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  -o-transform: translateX(50px);
+  -webkit-transform: translateX(50px) scale(1.1);
+  -moz-transform: translateX(50px) scale(1.1);
+  -ms-transform: translateX(50px) scale(1.1);
+  -o-transform: translateX(50px) scale(1.1);
 }
 
 .home-container .contact-info-container.fadeIn,
 .home-container .contact-field.fadeIn {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1);
+  -webkit-transform: translateX(0) scale(1);
+  -moz-transform: translateX(0) scale(1);
+  -ms-transform: translateX(0) scale(1);
+  -o-transform: translateX(0) scale(1);
 }
 
 /************ Banner Css ************/
@@ -52,17 +56,17 @@
   padding-left: 7vw;
   max-width: 45vw;
   text-align: left;
-  opacity: 0.5;
-  transform: translateY(-50px) scale(1.5);
-  transition: opacity 2s ease, transform 1.5s ease;
-  -webkit-transition: opacity 2s ease, transform 1.5s ease;
-  -moz-transition: opacity 2s ease, transform 1.5s ease;
-  -ms-transition: opacity 2s ease, transform 1.5s ease;
-  -o-transition: opacity 2s ease, transform 1.5s ease;
-  -webkit-transform: translateY(-50px) scale(1.5);
-  -moz-transform: translateY(-50px) scale(1.5);
-  -ms-transform: translateY(-50px) scale(1.5);
-  -o-transform: translateY(-50px) scale(1.5);
+  opacity: 0.7;
+  transform: translateY(-10px) scale(1.1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  -webkit-transition: opacity 0.5s ease, transform 0.5s ease;
+  -moz-transition: opacity 0.5s ease, transform 0.5s ease;
+  -ms-transition: opacity 0.5s ease, transform 0.5s ease;
+  -o-transition: opacity 0.5s ease, transform 0.5s ease;
+  -webkit-transform: translateY(-10px) scale(1.1);
+  -moz-transform: translateY(-10px) scale(1.1);
+  -ms-transform: translateY(-10px) scale(1.1);
+  -o-transform: translateY(-10px) scale(1.1);
 }
 .banner-content .text-content h1 {
   font-size: 45px;
@@ -75,17 +79,17 @@
   margin-right: 3vw;
   width: 25vw;
   height: auto;
-  opacity: 0.5;
-  transform: translateY(-50px) scale(1.3);
-  transition: opacity 2s ease, transform 1.5s ease;
-  -webkit-transition: opacity 2s ease, transform 1.5s ease;
-  -moz-transition: opacity 2s ease, transform 1.5s ease;
-  -ms-transition: opacity 2s ease, transform 1.5s ease;
-  -o-transition: opacity 2s ease, transform 1.5s ease;
-  -webkit-transform: translateY(-50px) scale(1.3);
-  -moz-transform: translateY(-50px) scale(1.3);
-  -ms-transform: translateY(-50px) scale(1.3);
-  -o-transform: translateY(-50px) scale(1.3);
+  opacity: 0.7;
+  transform: translateY(-5px) scale(1.1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  -webkit-transition: opacity 0.5s ease, transform 0.5s ease;
+  -moz-transition: opacity 0.5s ease, transform 0.5s ease;
+  -ms-transition: opacity 0.5s ease, transform 0.5s ease;
+  -o-transition: opacity 0.5s ease, transform 0.5s ease;
+  -webkit-transform: translateY(-5px) scale(1.1);
+  -moz-transform: translateY(-5px) scale(1.1);
+  -ms-transform: translateY(-5px) scale(1.1);
+  -o-transform: translateY(-5px) scale(1.1);
 }
 
 .banner-content .image-content.fadeIn,
@@ -188,8 +192,19 @@
   -moz-border-radius: 64px;
   -ms-border-radius: 64px;
   -o-border-radius: 64px;
+  opacity: 0.7;
+  transform: translateY(-10px) scale(1.1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.skill-bx.fadeIn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  -webkit-transform: translateY(0) scale(1);
+  -moz-transform: translateY(0) scale(1);
+  -ms-transform: translateY(0) scale(1);
+  -o-transform: translateY(0) scale(1);
+}
 .skill h2 {
   font-size: 45px;
   font-weight: 700;
