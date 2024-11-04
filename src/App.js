@@ -26,6 +26,25 @@ function App() {
     setShowMenu(!showMenu);
     document.body.classList.toggle("no-scroll", !showMenu);
   };
+
+  useEffect(() => {
+    const navbar = document.querySelector(".navbar");
+    const stickyOffset = navbar.offsetTop;
+
+    const handleScroll = () => {
+      if (window.pageYOffset > stickyOffset) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   useEffect(() => {
     let scrollTarget = window.scrollY;
     let isAnimating = false;

@@ -15,6 +15,13 @@ html {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+}
 
 .navbar {
   display: flex;
@@ -22,6 +29,7 @@ html {
   align-items: center;
   padding: 18px;
   padding-right: 10vw;
+  background-color: transparent;
 }
 
 .navbar-left img {
