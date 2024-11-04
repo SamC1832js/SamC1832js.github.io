@@ -110,7 +110,7 @@ function App() {
                 <button onClick={toggleMenu}>Projects</button>
               </Link>
               <Link to="/contact">
-                <button onClick={toggleMenu}>Connect</button>
+                <button onClick={toggleMenu}>Contact</button>
               </Link>
             </div>
           </div>
