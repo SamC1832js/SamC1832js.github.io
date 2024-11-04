@@ -24,14 +24,14 @@ function Enter() {
 
       const reverseIndex = radii.length - 1 - index;
 
-      const delay = index * 10;
+      const delay = index * 70;
 
       return setTimeout(() => {
         const intervalId = setInterval(() => {
           setDashOffsets((prevOffsets) => {
             const newOffset =
               prevOffsets[`circle${reverseIndex + 1}`] +
-              directions[reverseIndex] * 18;
+              directions[reverseIndex] * 24;
             return {
               ...prevOffsets,
               [`circle${reverseIndex + 1}`]: newOffset,
@@ -42,12 +42,10 @@ function Enter() {
       }, delay);
     });
 
-    setTimeout(() => setBackgroundOpacity(0), 2000);
-    const timer = setTimeout(() => setCircleVisible(false), 3000);
+    setTimeout(() => setBackgroundOpacity(0), 1500);
 
     return () => {
       intervals.forEach(clearTimeout);
-      clearTimeout(timer);
     };
   }, []);
 
