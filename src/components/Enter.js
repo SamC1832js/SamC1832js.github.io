@@ -36,7 +36,7 @@ function Enter() {
     (async function startAnimation() {
       for (let i = radii.length; i >= 0; i--) {
         animateCircle(i);
-        await new Promise((resolve) => setTimeout(resolve, 20));
+        await new Promise((resolve) => setTimeout(resolve, 40));
       }
     })();
 
