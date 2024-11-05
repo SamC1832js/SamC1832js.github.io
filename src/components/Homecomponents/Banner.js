@@ -19,6 +19,7 @@ export const Banner = () => {
   const period = 2000;
   const bannerTextRef = useRef(null);
   const bannerImgRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -77,7 +78,7 @@ export const Banner = () => {
 
   return (
     <section className="banner" id="home">
-      <video autoPlay loop muted>
+      <video ref={videoRef} autoPlay loop muted>
         <source src={videoBg} type="video/webm" />
         Your browser does not support the video tag.
       </video>

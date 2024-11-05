@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Enter.css";
-
+import videoBg from "./assets/video/banner-bg.webm";
 function Enter() {
   const [dashOffsets, setDashOffsets] = useState({
     circle1: 30,
@@ -10,7 +10,7 @@ function Enter() {
     circle5: 70,
   });
   const [backgroundOpacity, setBackgroundOpacity] = useState(1);
-
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const radii = [50, 70, 90, 110, 130];
   const directions = [-1.03, -1.45, -1.88, -2.3, -2.73];
 
@@ -45,6 +45,11 @@ function Enter() {
     return () => cancelAnimationFrame(animateCircle);
   }, []);
 
+  useEffect(() => {
+    const video = document.createElement("video");
+    video.src = videoBg;
+    video.onloadeddata = () => setVideoLoaded(true);
+  }, []);
   return (
     <div className="enter-container">
       <div
