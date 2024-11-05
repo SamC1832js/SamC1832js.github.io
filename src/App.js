@@ -35,10 +35,8 @@ function App() {
 
   useEffect(() => {
     if (!loading) {
-      // Only run this effect when loading is complete
       const navbar = document.querySelector(".navbar");
 
-      // Check if navbar exists before accessing its properties
       if (navbar) {
         const stickyOffset = navbar.offsetTop;
 
