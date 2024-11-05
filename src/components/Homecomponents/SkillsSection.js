@@ -18,23 +18,6 @@ export const SkillsSection = () => {
   ];
   const SkillsRef = useRef(null);
   const carouselRef = useRef(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fadeIn");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
-
-    if (SkillsRef.current) observer.observe(SkillsRef.current);
-
-    return () => observer.disconnect();
-  }, []);
   const dashArrayData = useMemo(() => {
     const fullDashArray = 200;
 
@@ -133,22 +116,26 @@ export const SkillsSection = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target === carouselRef.current) {
+              setIsInView(true); // Ensure `setIsInView` is defined
+            }
+            if (entry.target === SkillsRef.current) {
+              entry.target.classList.add("fadeIn");
+            }
+            observer.unobserve(entry.target);
+          }
+        });
       },
-      { threshold: 0.7 }
+      { threshold: 0.6 }
     );
 
-    if (carouselRef.current) {
-      observer.observe(carouselRef.current);
-    }
+    if (carouselRef.current) observer.observe(carouselRef.current);
+    if (SkillsRef.current) observer.observe(SkillsRef.current);
 
-    return () => {
-      if (carouselRef.current) observer.unobserve(carouselRef.current);
-    };
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
