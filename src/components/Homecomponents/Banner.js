@@ -1,6 +1,6 @@
 import "./Home.css";
 import React, { useState, useEffect, useRef } from "react";
-import headerImg from "../assets/img/header-img.svg";
+import bannerImg from "../assets/img/banner-img.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import videoBg from "../assets/video/banner-bg.webm";
@@ -18,9 +18,28 @@ export const Banner = () => {
   ];
   const period = 2000;
   const bannerTextRef = useRef(null);
-  const bannerImgRef = useRef(null);
-  const videoRef = useRef(null);
 
+  const videoRef = useRef(null);
+  const bannerImgRef = useRef([]);
+  useEffect(() => {
+    const faultEffect = () => {
+      bannerImgRef.current.forEach((img) => {
+        img.classList.add("faultImg_fault");
+        img.style.transform = `translate(${Math.random() * 60 - 30}%, ${
+          Math.random() * 60 - 30
+        }%)`;
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        const h = Math.random() * 50 + 50;
+        const w = Math.random() * 40 + 10;
+        img.style.clipPath = `polygon(${x}% ${y}%, ${x + w}% ${y}%, ${x + w}% ${
+          y + h
+        }%, ${x}% ${y + h}%)`;
+      });
+    };
+    const intervalId = setInterval(faultEffect, 50);
+    return () => clearInterval(intervalId);
+  }, []);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -35,7 +54,7 @@ export const Banner = () => {
     );
 
     if (bannerTextRef.current) observer.observe(bannerTextRef.current);
-    if (bannerImgRef.current) observer.observe(bannerImgRef.current);
+    //if (bannerImgRef.current) observer.observe(bannerImgRef.current);
 
     return () => observer.disconnect();
   }, []);
@@ -122,8 +141,25 @@ export const Banner = () => {
             </button>
           </div>
         </div>
-        <div ref={bannerImgRef} className="image-content">
-          <img src={headerImg} alt="Header Img" />
+        <div className="image-holder">
+          <div
+            ref={(el) => (bannerImgRef.current[0] = el)}
+            className="image-content"
+          >
+            <img src={bannerImg} alt="Banner Img" />
+          </div>
+          <div
+            ref={(el) => (bannerImgRef.current[1] = el)}
+            className="image-content"
+          >
+            <img src={bannerImg} alt="Banner Img" />
+          </div>
+          <div
+            ref={(el) => (bannerImgRef.current[2] = el)}
+            className="image-content"
+          >
+            <img src={bannerImg} alt="Banner Img" />
+          </div>
         </div>
       </div>
     </section>
