@@ -21,13 +21,14 @@ export const Banner = () => {
 
   const videoRef = useRef(null);
   const bannerImgRef = useRef([]);
-  useEffect(() => {
-    const faultEffect = () => {
+  const faultEffect = () => {
+    let intervalId = setInterval(() => {
       bannerImgRef.current.forEach((img) => {
         img.classList.add("faultImg_fault");
         img.style.transform = `translate(${Math.random() * 60 - 30}%, ${
           Math.random() * 60 - 30
         }%)`;
+
         const x = Math.random() * 100;
         const y = Math.random() * 100;
         const h = Math.random() * 50 + 50;
@@ -36,10 +37,22 @@ export const Banner = () => {
           y + h
         }%, ${x}% ${y + h}%)`;
       });
-    };
-    const intervalId = setInterval(faultEffect, 50);
-    return () => clearInterval(intervalId);
+    }, 50);
+
+    setTimeout(() => {
+      clearInterval(intervalId);
+      bannerImgRef.current.forEach((img) => {
+        img.classList.remove("faultImg_fault");
+        img.style.transform = "";
+        img.style.clipPath = "";
+      });
+    }, 2500);
+  };
+
+  useEffect(() => {
+    faultEffect();
   }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -141,7 +154,7 @@ export const Banner = () => {
             </button>
           </div>
         </div>
-        <div className="image-holder">
+        <div className="image-holder" onClick={faultEffect}>
           <div
             ref={(el) => (bannerImgRef.current[0] = el)}
             className="image-content"

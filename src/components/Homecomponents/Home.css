@@ -31,7 +31,7 @@
 /************ Banner Css ************/
 .banner {
   position: relative;
-  padding: 5vh 0 25vh 0;
+  padding: 5vh 0 50vh 0;
   text-align: center;
   overflow: hidden;
 }
@@ -53,6 +53,7 @@
   justify-content: space-around;
 }
 .banner-content .text-content {
+  margin-top: 15vh;
   padding-left: 7vw;
   max-width: 45vw;
   text-align: left;
@@ -75,21 +76,53 @@
 .banner-content .text-content p {
   font-size: 1.2rem;
 }
-.banner-content .image-content {
-  margin-right: 3vw;
+
+.banner-content .image-holder {
+  position: relative;
   width: 25vw;
   height: auto;
-  opacity: 0.7;
-  transform: translateY(-5px) scale(1.1);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  -webkit-transition: opacity 0.5s ease, transform 0.5s ease;
-  -moz-transition: opacity 0.5s ease, transform 0.5s ease;
-  -ms-transition: opacity 0.5s ease, transform 0.5s ease;
-  -o-transition: opacity 0.5s ease, transform 0.5s ease;
-  -webkit-transform: translateY(-5px) scale(1.1);
-  -moz-transform: translateY(-5px) scale(1.1);
-  -ms-transform: translateY(-5px) scale(1.1);
-  -o-transform: translateY(-5px) scale(1.1);
+}
+
+.image-holder .image-content {
+  position: absolute;
+  width: 25vw;
+  top: -150px;
+  left: 0px;
+  mix-blend-mode: difference;
+  transition: transform 0.35s;
+  -webkit-transition: transform 0.35s;
+  -moz-transition: transform 0.35s;
+  -ms-transition: transform 0.35s;
+  -o-transition: transform 0.35s;
+}
+
+.image-holder .image-content:nth-child(1) {
+  z-index: 3;
+  transform: translateX(0);
+  filter: hue-rotate(20deg);
+  -webkit-filter: hue-rotate(20deg);
+}
+
+.image-holder .image-content:nth-child(2) {
+  z-index: 2;
+  transform: translateX(-2%);
+  filter: hue-rotate(150deg);
+  -webkit-transform: translateX(-2%);
+  -moz-transform: translateX(-2%);
+  -ms-transform: translateX(-2%);
+  -o-transform: translateX(-2%);
+  -webkit-filter: hue-rotate(150deg);
+}
+
+.image-holder .image-content:nth-child(3) {
+  z-index: 1;
+  transform: translateX(2%);
+  filter: hue-rotate(270deg);
+  -webkit-filter: hue-rotate(270deg);
+  -webkit-transform: translateX(2%);
+  -moz-transform: translateX(2%);
+  -ms-transform: translateX(2%);
+  -o-transform: translateX(2%);
 }
 
 .banner-content .image-content.fadeIn,
@@ -116,10 +149,8 @@
   display: inline-block;
 }
 .banner-content .image-content img {
-  animation: updown 3s linear infinite;
   width: 100%;
   height: auto;
-  -webkit-animation: updown 3s linear infinite;
 }
 .banner-button {
   margin-top: 2vh;
