@@ -11,6 +11,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ReactComponent as SettingIcon } from "./icon/list-settings-line.svg";
 import logo from "./components/assets/img/logo.png";
 import Enter from "./components/Enter";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 
 function App() {
   const location = useLocation();
@@ -56,41 +58,14 @@ function App() {
       }
     }
   }, [loading]);
-  useEffect(() => {
-    let scrollTarget = window.scrollY;
-    let isAnimating = false;
 
-    const smoothScroll = () => {
-      isAnimating = true;
-      const currentScroll = window.scrollY;
-      const distance = scrollTarget - currentScroll;
+  const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
 
-      if (Math.abs(distance) > 1) {
-        window.scrollTo(0, currentScroll + distance * 0.1); // Smooth out the movement
-        requestAnimationFrame(smoothScroll);
-      } else {
-        isAnimating = false; // Stop animation when close to target
-      }
-    };
-
-    const handleScroll = (event) => {
-      scrollTarget += event.deltaY * 5;
-      scrollTarget = Math.max(
-        0,
-        Math.min(scrollTarget, document.body.scrollHeight - window.innerHeight)
-      );
-
-      if (!isAnimating) {
-        requestAnimationFrame(smoothScroll);
-      }
-    };
-
-    window.addEventListener("wheel", handleScroll);
-
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, []);
+  requestAnimationFrame(raf);
   return (
     <div className="App">
       {loading ? (

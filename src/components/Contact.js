@@ -65,7 +65,7 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              SamC-1832
+              Cheng Sam Cheang
             </a>
           </div>
           <div className="contact-info">

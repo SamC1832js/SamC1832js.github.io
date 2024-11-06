@@ -175,11 +175,6 @@ export const SkillsSection = () => {
     });
   };
 
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => {
       if (prevIndex === 0) {
