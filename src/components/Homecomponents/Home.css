@@ -82,6 +82,28 @@
   width: 25vw;
   height: auto;
 }
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(10deg);
+    -webkit-filter: hue-rotate(10deg);
+  }
+  25% {
+    filter: hue-rotate(20deg);
+    -webkit-filter: hue-rotate(20deg);
+  }
+  50% {
+    filter: hue-rotate(30deg);
+    -webkit-filter: hue-rotate(30deg);
+  }
+  75% {
+    filter: hue-rotate(40deg);
+    -webkit-filter: hue-rotate(40deg);
+  }
+  100% {
+    filter: hue-rotate(50deg);
+    -webkit-filter: hue-rotate(50deg);
+  }
+}
 
 .image-holder .image-content {
   position: absolute;
@@ -89,11 +111,14 @@
   top: -150px;
   left: 0px;
   mix-blend-mode: difference;
-  transition: transform 0.35s;
-  -webkit-transition: transform 0.35s;
-  -moz-transition: transform 0.35s;
-  -ms-transition: transform 0.35s;
-  -o-transition: transform 0.35s;
+  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+}
+.image-holder .image-content:hover {
+  animation: hueRotate 1s ease infinite alternate;
 }
 
 .image-holder .image-content:nth-child(1) {
