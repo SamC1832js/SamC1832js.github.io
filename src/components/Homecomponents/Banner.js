@@ -17,7 +17,7 @@ export const Banner = () => {
     "Web Developer",
   ];
   const period = 2000;
-  const bannerTextRef = useRef(null);
+  const taglineRef = useRef(null);
 
   const videoRef = useRef(null);
   const bannerImgRef = useRef([]);
@@ -66,7 +66,7 @@ export const Banner = () => {
       { threshold: 0.2 }
     );
 
-    if (bannerTextRef.current) observer.observe(bannerTextRef.current);
+    if (taglineRef.current) observer.observe(taglineRef.current);
     //if (bannerImgRef.current) observer.observe(bannerImgRef.current);
 
     return () => observer.disconnect();
@@ -115,8 +115,10 @@ export const Banner = () => {
         Your browser does not support the video tag.
       </video>
       <div className="banner-content">
-        <div ref={bannerTextRef} className="text-content">
-          <span className="tagline">Welcome to my Portfolio</span>
+        <div className="text-content">
+          <span ref={taglineRef} className="tagline">
+            Welcome to my Portfolio
+          </span>
           <h1>
             {`Hi! I'm Sam`}{" "}
             <span
