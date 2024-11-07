@@ -54,7 +54,7 @@ function Title() {
     },
     {
       text: [
-        "I'Was",
+        "I Was",
         "Content",
         "Creator",
         "I shared strategies to help people succeed in games",
