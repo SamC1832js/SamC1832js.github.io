@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ReactComponent as SettingIcon } from "./icon/list-settings-line.svg";
 import logo from "./components/assets/img/logo.png";
 import Enter from "./components/Enter";
+import Title from "./components/Homecomponents/Title";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 
@@ -90,6 +91,9 @@ function App() {
                   {/*<Link to="/about">
                 <button onClick={toggleMenu}>About</button>
               </Link>*/}
+                  <Link to="/title">
+                    <button onClick={toggleMenu}>Experience</button>
+                  </Link>
                   <Link to="/skills">
                     <button onClick={toggleMenu}>Skills</button>
                   </Link>
@@ -164,6 +168,20 @@ function App() {
                       transition={{ duration: 0.3 }}
                     >
                       <Timeline />
+                    </motion.div>
+                  }
+                />
+                <Route
+                  path="/title"
+                  element={
+                    <motion.div
+                      variants={pageTransition}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Title />
                     </motion.div>
                   }
                 />

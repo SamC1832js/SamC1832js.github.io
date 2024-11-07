@@ -6,12 +6,14 @@ import { SkillsSection } from "./Homecomponents/SkillsSection";
 import { Footer } from "./Homecomponents/Footer";
 import Timeline from "./Timeline";
 import Contact from "./Contact";
+import Title from "./Homecomponents/Title";
 
 function Home() {
   return (
     <div className="home-container">
       <Banner />
       <SkillsSection />
+      <Title />
       {/* <Timeline /> */}
       <Contact />
 
