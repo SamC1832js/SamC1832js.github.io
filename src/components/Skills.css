@@ -30,7 +30,7 @@
   justify-content: space-between;
   gap: 20px;
 }
-.skills-category {
+.skills-container .skills-category {
   margin: 1rem;
   display: flex;
   flex-direction: row;

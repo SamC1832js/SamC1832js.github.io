@@ -100,8 +100,7 @@ export const SkillsSection = () => {
   const updateItemsToShow = () => {
     if (carouselRef.current) {
       const carouselWidth = carouselRef.current.offsetWidth;
-      const itemWidthWithMargin = 113 + 2 * (window.innerWidth * 0.02); // Adjust for item width and margin
-      const calculatedItems = Math.floor(carouselWidth / itemWidthWithMargin);
+      const calculatedItems = Math.floor(carouselWidth / 202.5);
       const limitedItems = Math.min(Math.max(calculatedItems, 1), 3);
       setItemsToShow(limitedItems);
     }
@@ -184,10 +183,7 @@ export const SkillsSection = () => {
   };
 
   const displayItems = () => {
-    const itemWidth = 140;
-    const itemMargin = 2 * (window.innerWidth * 0.02);
-    const itemWidthWithMargin = itemWidth + itemMargin;
-    const translateX = -currentIndex * itemWidthWithMargin;
+    const translateX = -currentIndex * 202.5;
 
     return (
       <div
@@ -246,11 +242,12 @@ export const SkillsSection = () => {
         </p>
 
         <div className="carousel" ref={carouselRef}>
-          <button className="carousel-control prev" onClick={prevSlide}>
+          <button className="carousel-control-prev" onClick={prevSlide}>
             <img src={arrow1} alt="Previous" />
           </button>
           <div className="carousel-inner">{displayItems()}</div>
-          <button className="carousel-control next" onClick={nextSlide}>
+
+          <button className="carousel-control-next" onClick={nextSlide}>
             <img src={arrow2} alt="Next" />
           </button>
         </div>
