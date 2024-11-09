@@ -9,9 +9,22 @@ body {
   background-color: var(--background--color);
 }
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
 ::-webkit-scrollbar {
   width: 1rem;
 }
