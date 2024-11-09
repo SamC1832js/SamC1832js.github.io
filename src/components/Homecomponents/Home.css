@@ -89,6 +89,8 @@
 .image-holder .image-content {
   position: absolute;
   width: 25vw;
+  top: -9.375rem;
+  left: 0px;
   mix-blend-mode: difference;
   transition: all 0.15s ease;
   -webkit-transition: all 0.15s ease;
