@@ -122,3 +122,58 @@ root {
   -ms-transform: translate(-5%, -5%);
   -o-transform: translate(-5%, -5%);
 }
+
+@media screen and (max-width: 768px) {
+  .title-container {
+    padding-top: 2rem; /* Reduce padding for smaller screens */
+  }
+
+  .title-item {
+    width: 70%; /* Adjust to fit most phone screens */
+    flex-direction: column; /* Stack elements vertically */
+    margin-bottom: 5rem; /* Reduce bottom margin */
+  }
+
+  .title-item .title-text {
+    margin-right: 0;
+  }
+
+  .title-text p:nth-child(1) {
+    font-size: 1.5rem; /* Smaller heading */
+    margin-bottom: 0.3rem;
+  }
+
+  .title-text p:nth-child(2),
+  .title-text p:nth-child(3) {
+    font-size: 2rem; /* Adjust font size for main text */
+    line-height: 2.5rem;
+  }
+
+  .title-text p:nth-child(4) {
+    font-size: 1rem; /* Smaller subheading */
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .title-text p:nth-child(5) {
+    font-size: 2.5rem; /* Adjust for smaller screens */
+  }
+
+  .title-item .title-img {
+    width: 15rem;
+    height: 15rem; /* Maintain proportional height */
+    margin-left: 0; /* Center the image */
+    margin-top: 1rem; /* Add spacing between text and image */
+  }
+
+  .title-item .title-img img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%;
+    transform: translate(0, 0); /* Reset transform for smaller screens */
+    border-radius: 1rem;
+  }
+
+  .title-container div:nth-child(1),
+  .title-container div:nth-child(2) {
+    transform: translateX(0%); /* Align all elements to the center */
+  }
+}
