@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import arrow1 from "../assets/img/arrow1.svg";
 import arrow2 from "../assets/img/arrow2.svg";
-import "../Skills.css";
+import "./SkillsSection.css";
 
 export const SkillsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

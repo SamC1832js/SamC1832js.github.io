@@ -137,32 +137,31 @@ root {
   .title-item .title-text {
     margin-right: 0;
   }
-
   .title-text p:nth-child(1) {
-    font-size: 1.5rem; /* Smaller heading */
+    font-size: 1.5rem;
     margin-bottom: 0.3rem;
   }
 
   .title-text p:nth-child(2),
   .title-text p:nth-child(3) {
-    font-size: 2rem; /* Adjust font size for main text */
+    font-size: 2rem;
     line-height: 2.5rem;
   }
 
   .title-text p:nth-child(4) {
-    font-size: 1rem; /* Smaller subheading */
+    font-size: 1rem;
     margin: 1rem 0 1.5rem 0;
   }
 
   .title-text p:nth-child(5) {
-    font-size: 2.5rem; /* Adjust for smaller screens */
+    font-size: 2.5rem;
   }
 
   .title-item .title-img {
     width: 15rem;
     height: 15rem; /* Maintain proportional height */
-    margin-left: 0; /* Center the image */
-    margin-top: 1rem; /* Add spacing between text and image */
+    margin-left: 0;
+    margin-top: 1rem;
   }
 
   .title-item .title-img img {
