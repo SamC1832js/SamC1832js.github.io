@@ -4,7 +4,7 @@ import { Banner } from "./Homecomponents/Banner";
 import { SkillsSection } from "./Homecomponents/SkillsSection";
 //import { Contact } from "./components/Contact";
 import { Footer } from "./Homecomponents/Footer";
-import Timeline from "./Timeline";
+import Timeline from "./TimelineFrontPage";
 import Contact from "./Contact";
 import Title from "./Homecomponents/Title";
 
@@ -14,7 +14,7 @@ function Home() {
       <Banner />
       <SkillsSection />
       <Title />
-      {/* <Timeline /> */}
+      <Timeline />
       <Contact />
 
       <Footer />

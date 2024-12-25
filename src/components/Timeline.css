@@ -1,6 +1,6 @@
 .timeline h1 {
   text-align: center;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 .vertical-timeline-element-content.bounce-in {
   box-shadow: var(--skills--items--box--shadow);
@@ -14,4 +14,21 @@
   background-color: #03d3a0;
   border: 2px solid #fff;
   transition: transform 0.3s ease-in-out;
+}
+
+.vertical-timeline-element .summary {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+}
+.vertical-timeline-element .vertical-timeline-element-image {
+  width: 2.8rem;
+  height: auto;
+}
+.vertical-timeline-element .vertical-timeline-element-boldtitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
 }
