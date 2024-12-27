@@ -57,9 +57,8 @@
 }
 
 .social-icon img {
-  width: 0.9375rem;
-  height: 0.9375rem;
-  filter: invert(1);
+  width: 1rem;
+  height: 1rem;
 }
 
 .footer p {

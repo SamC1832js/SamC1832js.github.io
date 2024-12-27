@@ -1,7 +1,7 @@
 import React, { useEffect, Fragment } from "react";
-import "./Timeline.css";
-import { ReactComponent as EducationIcon } from "../icon/graduation-cap-line.svg";
-import { ReactComponent as WorkIcon } from "../icon/briefcase-4-fill.svg";
+import "../Timeline.css";
+import { ReactComponent as EducationIcon } from "../../icon/graduation-cap-line.svg";
+import { ReactComponent as WorkIcon } from "../../icon/briefcase-4-fill.svg";
 import timelineElements from "./TimelineElementsFrontPage";
 import {
   VerticalTimeline,

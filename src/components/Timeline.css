@@ -1,7 +1,9 @@
 .timeline h1 {
   text-align: center;
   font-size: 3.5rem;
+  margin-bottom: 3rem;
 }
+
 .vertical-timeline-element-content.bounce-in {
   box-shadow: var(--skills--items--box--shadow);
   border-radius: 8px;

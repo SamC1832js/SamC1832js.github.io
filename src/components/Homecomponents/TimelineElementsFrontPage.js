@@ -1,9 +1,9 @@
-import WebDevIcon from "./assets/img/line-icon-for-web-develop-vector.png";
-import WeatherfordIcon from "./assets/img/weatherford.png";
-import UHDIcon from "./assets/img/uhd.png";
-import OutlierIcon from "./assets/img/outlier-ai-squareLogo-1715217719094.png";
-import HaidilaoIcon from "./assets/img/haidilao.png";
-import YoutubeIcon from "./assets/img/youtube.png";
+import WebDevIcon from "../assets/img/line-icon-for-web-develop-vector.png";
+import WeatherfordIcon from "../assets/img/weatherford.png";
+import UHDIcon from "../assets/img/uhd.png";
+import OutlierIcon from "../assets/img/outlier-ai-squareLogo-1715217719094.png";
+import HaidilaoIcon from "../assets/img/haidilao.png";
+import YoutubeIcon from "../assets/img/youtube.png";
 let timelineElements = [
   {
     id: 7,
