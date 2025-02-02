@@ -11,9 +11,6 @@ export const SkillsSection = () => {
     { name: "Software QA Analyst", academicYOE: 95, workYOE: 0 },
     { name: "Software Engineer", academicYOE: 85, workYOE: 0 },
     { name: "Web Developer", academicYOE: 90, workYOE: 0 },
-    { name: "Software QA Analyst", academicYOE: 95, workYOE: 0 },
-    { name: "Software Engineer", academicYOE: 85, workYOE: 0 },
-    { name: "Web Developer", academicYOE: 90, workYOE: 0 },
   ];
   const SkillsRef = useRef(null);
   const carouselRef = useRef(null);
@@ -97,21 +94,6 @@ export const SkillsSection = () => {
     }
   }, [isInView]);
 
-  const updateItemsToShow = () => {
-    if (carouselRef.current) {
-      const carouselWidth = carouselRef.current.offsetWidth;
-      const calculatedItems = Math.floor(carouselWidth / 202.5);
-      const limitedItems = Math.min(Math.max(calculatedItems, 1), 3);
-      setItemsToShow(limitedItems);
-    }
-  };
-
-  useEffect(() => {
-    updateItemsToShow();
-    window.addEventListener("resize", updateItemsToShow);
-    return () => window.removeEventListener("resize", updateItemsToShow);
-  }, []);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -162,25 +144,6 @@ export const SkillsSection = () => {
       });
     });
   }, [isInView, dashArrayData]);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => {
-      const remainingItems = title.length - prevIndex;
-      if (remainingItems <= itemsToShow) {
-        return 0;
-      }
-      return prevIndex + 1;
-    });
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => {
-      if (prevIndex === 0) {
-        return title.length - itemsToShow;
-      }
-      return prevIndex - 1;
-    });
-  };
 
   const displayItems = () => {
     const translateX = -currentIndex * 202.5;
@@ -242,14 +205,7 @@ export const SkillsSection = () => {
         </p>
 
         <div className="carousel" ref={carouselRef}>
-          <button className="carousel-control-prev" onClick={prevSlide}>
-            <img src={arrow1} alt="Previous" />
-          </button>
           <div className="carousel-inner">{displayItems()}</div>
-
-          <button className="carousel-control-next" onClick={nextSlide}>
-            <img src={arrow2} alt="Next" />
-          </button>
         </div>
       </div>
     </section>

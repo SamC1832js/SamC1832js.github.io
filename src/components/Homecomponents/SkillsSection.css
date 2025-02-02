@@ -56,26 +56,14 @@
 }
 
 .carousel-inner {
-  overflow: hidden;
-  width: 39.375rem;
+  width: 30.375vw;
 }
 
-.carousel-control {
-  border: none;
-  position: absolute;
-  background: transparent;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-}
 .carousel-inner .skills-category {
   transition: transform 0.5s ease;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   -webkit-transition: transform 0.5s ease;
   -moz-transition: transform 0.5s ease;
   -ms-transition: transform 0.5s ease;
@@ -86,23 +74,61 @@
   background: none;
   box-shadow: none;
   margin: 0 2rem;
+  width: 6rem;
 }
 .carousel-inner .YOE {
   font-size: 1.2rem;
   font-weight: bold;
   margin-left: 0.4375rem;
 }
-.carousel-control-prev,
-.carousel-control-next {
-  filter: invert(1);
-  background: transparent;
-  border: none;
-}
-.carousel-control-prev {
-  margin-left: 15vw;
-  margin-right: 1vw;
-}
 
-.carousel-control-next {
-  margin-right: 15vw;
+@media screen and (max-width: 768px) {
+  .skill-bx {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+  }
+
+  .skill h2 {
+    font-size: 2rem;
+  }
+
+  .skill p {
+    font-size: 1rem;
+    margin: 0.5rem 0 2rem 0;
+  }
+
+  .carousel-inner {
+    width: 100%;
+  }
+
+  .carousel-inner .skills-category {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .carousel-inner .skills-items {
+    width: 6rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-inner .skills-items h3 {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .carousel-inner .YOE {
+    font-size: 1rem;
+    transform: translateX(1rem);
+    -webkit-transform: translateX(1rem);
+    -moz-transform: translateX(1rem);
+    -ms-transform: translateX(1rem);
+    -o-transform: translateX(1rem);
+  }
 }

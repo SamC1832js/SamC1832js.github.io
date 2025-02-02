@@ -37,7 +37,15 @@
   object-fit: cover;
   z-index: -1;
 }
-
+.banner .skills-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.6rem;
+}
+.banner .skills-items {
+  min-width: 3rem;
+}
 .banner-content {
   display: flex;
   flex-direction: row;
@@ -169,7 +177,7 @@
   height: auto;
 }
 .banner-button {
-  margin-top: 2vh;
+  margin-top: 3vh;
   background: transparent;
   border: none;
   font-size: 1.5rem;
@@ -205,26 +213,29 @@
 
 @media screen and (max-width: 768px) {
   :root {
-    font-size: 14px;
-  }
-  .banner-content {
-    display: flex;
-    flex-direction: column;
-  }
-  .footer-row {
-    flex-direction: row;
-  }
-  .logo-section,
-  .social-section {
-    flex: 1;
+    font-size: 12px; /* Smaller base font size */
   }
 
-  .logo-section img {
-    min-width: 120px;
-    height: auto;
+  h1 {
+    font-size: 2rem !important; /* Reduce heading sizes */
   }
-  .social-section {
-    align-items: flex-end;
-    text-align: right;
+
+  .banner-content {
+    flex-direction: column-reverse; /* Stack image below text */
+    padding: 0 5vw; /* Add horizontal padding */
+  }
+
+  .banner-content .text-content {
+    max-width: 100%;
+    padding-left: 0;
+    margin-top: 5vh;
+  }
+
+  .banner .banner-content .image-holder {
+    transform: translate(-0rem, 60rem);
+    -webkit-transform: translate(-0rem, 60rem);
+    -moz-transform: translate(-0rem, 60rem);
+    -ms-transform: translate(-0rem, 60rem);
+    -o-transform: translate(-0rem, 60rem);
   }
 }

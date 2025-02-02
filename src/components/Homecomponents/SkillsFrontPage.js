@@ -7,12 +7,9 @@ function SkillsFrontPage() {
     { name: "Java" },
     { name: "Python" },
     { name: ".Net" },
-    { name: "HTML" },
-    { name: "JavaScript" },
+    { name: "Angular" },
     { name: "React" },
     { name: "C#" },
-    { name: "VB" },
-    { name: "Dart" },
     { name: "Flutter" },
     { name: "Spring Boot" },
   ];

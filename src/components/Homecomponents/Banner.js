@@ -19,6 +19,29 @@ export const Banner = () => {
   const period = 2000;
   const taglineRef = useRef(null);
 
+  const programmingSkills = [
+    { name: "Angular" },
+    { name: "React" },
+    { name: "Flutter" },
+    { name: "Docker" },
+    { name: "Kubernetes" },
+    { name: "Git" },
+    { name: "Agile" },
+    { name: "Scrum" },
+    { name: "Jira" },
+  ];
+
+  const backendSkills = [
+    { name: "Java" },
+    { name: "C++" },
+    { name: "C#" },
+    { name: "Python" },
+    { name: "Selenium" },
+    { name: "Postman" },
+    { name: "Spring Boot" },
+    { name: "PostgreSQL" },
+  ];
+
   const videoRef = useRef(null);
   const bannerImgRef = useRef([]);
   const faultEffect = () => {
@@ -129,14 +152,25 @@ export const Banner = () => {
               <span className="wrap">{text}</span>
             </span>
           </h1>
-          <p>
-            I am Computer Science graduate passionate about optimizing software
-            quality and looking forward to applying my skills to create
-            impactful solutions. I excel in using modern tools and development
-            practices to build efficient, scalable, and reliable applications. I
-            thrive in dynamic environments, and committed to continuous learning
-            and adaptability.
-          </p>
+          <h2>My skills brief</h2>
+          <div className="skills-category">
+            {backendSkills.map((lang) => (
+              <div className="skills-items" key={lang.name}>
+                <div className={lang.name}>
+                  <h3>{lang.name}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="skills-category">
+            {programmingSkills.map((lang) => (
+              <div className="skills-items" key={lang.name}>
+                <div className={lang.name}>
+                  <h3>{lang.name}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
           <Link to="/contact">
             <button className="banner-button">
               <span className="text">Let’s Connect</span>{" "}

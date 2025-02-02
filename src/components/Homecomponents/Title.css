@@ -176,3 +176,14 @@ root {
     transform: translateX(0%); /* Align all elements to the center */
   }
 }
+
+@media screen and (max-width: 768px) {
+  .title-item .title-img {
+    order: -1; /* Move images above text */
+    margin-bottom: 2rem;
+  }
+
+  .title-item .title-img img {
+    height: auto; /* Prevent image distortion */
+  }
+}
