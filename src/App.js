@@ -39,16 +39,20 @@ function App() {
   useEffect(() => {
     if (!loading) {
       const navbar = document.querySelector(".navbar");
+      const navbarContainer = document.querySelector(".navbar-container");
+      let lastScrollY = window.scrollY;
 
-      if (navbar) {
-        const stickyOffset = navbar.offsetTop;
-
+      if (navbar && navbarContainer) {
         const handleScroll = () => {
-          if (window.scrollY > stickyOffset) {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY > 0) {
             navbar.classList.add("sticky");
           } else {
             navbar.classList.remove("sticky");
           }
+
+          lastScrollY = currentScrollY;
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -74,41 +78,43 @@ function App() {
       ) : (
         <>
           <header className="App-header">
-            <nav className="navbar">
-              <div className="navbar-left">
-                <img src={logo} alt="Logo" />
-              </div>
-              <div className="navbar-right">
-                <button className="menu-button" onClick={toggleMenu}>
-                  <SettingIcon
-                    style={{ width: "24px", height: "24px", fill: "#000" }}
-                  />
-                </button>
-                <div className={`nav-links ${showMenu ? "show" : ""}`}>
-                  <Link to="/home">
-                    <button onClick={toggleMenu}>Home</button>
-                  </Link>
-                  {/*<Link to="/about">
+            <div className="navbar-container">
+              <nav className="navbar">
+                <div className="navbar-left">
+                  <img src={logo} alt="Logo" />
+                </div>
+                <div className="navbar-right">
+                  <button className="menu-button" onClick={toggleMenu}>
+                    <SettingIcon
+                      style={{ width: "24px", height: "24px", fill: "#000" }}
+                    />
+                  </button>
+                  <div className={`nav-links ${showMenu ? "show" : ""}`}>
+                    <Link to="/home">
+                      <button onClick={toggleMenu}>Home</button>
+                    </Link>
+                    {/*<Link to="/about">
                 <button onClick={toggleMenu}>About</button>
               </Link>*/}
-                  <Link to="/title">
-                    <button onClick={toggleMenu}>Experience</button>
-                  </Link>
-                  <Link to="/skills">
-                    <button onClick={toggleMenu}>Skills</button>
-                  </Link>
-                  <Link to="/timeline">
-                    <button onClick={toggleMenu}>Timeline</button>
-                  </Link>
-                  <Link to="/projects">
-                    <button onClick={toggleMenu}>Projects</button>
-                  </Link>
-                  <Link to="/contact">
-                    <button onClick={toggleMenu}>Contact</button>
-                  </Link>
+                    <Link to="/title">
+                      <button onClick={toggleMenu}>Experience</button>
+                    </Link>
+                    <Link to="/skills">
+                      <button onClick={toggleMenu}>Skills</button>
+                    </Link>
+                    <Link to="/timeline">
+                      <button onClick={toggleMenu}>Timeline</button>
+                    </Link>
+                    <Link to="/projects">
+                      <button onClick={toggleMenu}>Projects</button>
+                    </Link>
+                    <Link to="/contact">
+                      <button onClick={toggleMenu}>Contact</button>
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </nav>
+              </nav>
+            </div>
           </header>
 
           <main>
