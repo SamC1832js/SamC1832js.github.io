@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { Banner } from "./Homecomponents/Banner";
 import { SkillsSection } from "./Homecomponents/SkillsSection";
-import Skills from "./Homecomponents/SkillsFrontPage";
+import Skills from "./Skills";
 //import { Contact } from "./components/Contact";
 import { Footer } from "./Homecomponents/Footer";
 import Timeline from "./Homecomponents/TimelineFrontPage";

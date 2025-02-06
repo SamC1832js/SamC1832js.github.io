@@ -12,7 +12,15 @@
   --skills--header-font-size: 25px;
 }
 
+.SkillsHome h1 {
+  margin-top: 6rem;
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+
 .skills-container {
+  margin-left: 8vw;
   padding-left: 2vh;
   display: flex;
   flex-direction: column;
@@ -41,6 +49,20 @@
 .skills-items {
   margin: var(--skills--items--margin);
   background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  font-size: var(--skills--font--size);
+  box-shadow: var(--skills--items--box--shadow);
+  padding: 1rem 0.8rem;
+  margin: 5px 0;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.programming-item {
+  margin: var(--skills--items--margin);
+  background-color: rgb(255, 255, 255);
   border-radius: var(--skills--items--border-radius);
   font-size: var(--skills--font--size);
   padding: var(--skills--items--padding);
@@ -56,10 +78,9 @@
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
-
-.skills-items h3 {
+.programming-item h3 {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 .progress {
   position: relative;
@@ -88,20 +109,20 @@
   -ms-transform: translate(5px, 5px);
   -o-transform: translate(5px, 5px);
 }
-
-.academic-circle,
-.work-circle {
+.programming-item .academic-circle,
+.programming-item .work-circle {
   transition: stroke-dashoffset 2s ease;
+
   -webkit-transition: stroke-dashoffset 2s ease;
   -moz-transition: stroke-dashoffset 2s ease;
   -ms-transition: stroke-dashoffset 2s ease;
   -o-transition: stroke-dashoffset 2s ease;
 }
-.academic-circle {
+.programming-item .academic-circle {
   stroke: var(--color-academic);
 }
 
-.work-circle {
+.programming-item .work-circle {
   stroke: var(--color-work);
 }
 

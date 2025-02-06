@@ -1,5 +1,4 @@
-/************ Skills Css ************/
-.skill {
+*********** Skills Css *********** .skill {
   margin-bottom: 15rem;
   position: relative;
 }
@@ -26,6 +25,10 @@
   -moz-transform: translateY(-0.625rem) scale(1.1);
   -ms-transform: translateY(-0.625rem) scale(1.1);
   -o-transform: translateY(-0.625rem) scale(1.1);
+  -webkit-transition: opacity 0.5s ease, transform 0.5s ease;
+  -moz-transition: opacity 0.5s ease, transform 0.5s ease;
+  -ms-transition: opacity 0.5s ease, transform 0.5s ease;
+  -o-transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .skill-bx.fadeIn {
