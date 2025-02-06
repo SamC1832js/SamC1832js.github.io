@@ -1,6 +1,6 @@
 :root {
   --skills--font--size: 15px;
-  --skills--items--padding: 2.3rem 1.2rem 1.3rem 1.2rem;
+  --skills--items--padding: 15px;
   --skills--items--border-radius: 30px;
   --skills--items--margin: 15px;
   --skills--items--box--shadow: 2px 2px 5px rgba(0, 0, 0, 0.2),
@@ -12,15 +12,7 @@
   --skills--header-font-size: 25px;
 }
 
-.SkillsHome h1 {
-  margin-top: 6rem;
-  text-align: center;
-  font-size: 3.5rem;
-  margin-bottom: 3rem;
-}
-
 .skills-container {
-  margin-left: 8vw;
   padding-left: 2vh;
   display: flex;
   flex-direction: column;
@@ -28,6 +20,7 @@
 }
 
 .skills-category-header h2 {
+  padding-left: 2vh;
   font-size: var(--skills--header-font-size);
   text-decoration: none;
 }
@@ -38,15 +31,14 @@
   justify-content: space-between;
   gap: 20px;
 }
-.skills-container .skills-category {
-  margin: 1rem;
+.skills-category {
   display: flex;
   flex-direction: row;
   align-items: start;
   gap: 10px;
 }
 
-.skills-items {
+.other-items {
   margin: var(--skills--items--margin);
   background-color: rgb(255, 255, 255);
   border-radius: 12px;
@@ -60,7 +52,7 @@
   -o-border-radius: 12px;
 }
 
-.programming-item {
+.skills-items {
   margin: var(--skills--items--margin);
   background-color: rgb(255, 255, 255);
   border-radius: var(--skills--items--border-radius);
@@ -78,9 +70,9 @@
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
-.programming-item h3 {
+
+.skills-items h3 {
   text-align: center;
-  margin-bottom: 0.7rem;
 }
 .progress {
   position: relative;
@@ -109,20 +101,20 @@
   -ms-transform: translate(5px, 5px);
   -o-transform: translate(5px, 5px);
 }
-.programming-item .academic-circle,
-.programming-item .work-circle {
-  transition: stroke-dashoffset 2s ease;
 
+.academic-circle,
+.work-circle {
+  transition: stroke-dashoffset 2s ease;
   -webkit-transition: stroke-dashoffset 2s ease;
   -moz-transition: stroke-dashoffset 2s ease;
   -ms-transition: stroke-dashoffset 2s ease;
   -o-transition: stroke-dashoffset 2s ease;
 }
-.programming-item .academic-circle {
+.academic-circle {
   stroke: var(--color-academic);
 }
 
-.programming-item .work-circle {
+.work-circle {
   stroke: var(--color-work);
 }
 
