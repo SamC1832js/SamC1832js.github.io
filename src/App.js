@@ -90,25 +90,19 @@ function App() {
                     />
                   </button>
                   <div className={`nav-links ${showMenu ? "show" : ""}`}>
-                    <Link to="/home">
+                    <Link to="/#home">
                       <button onClick={toggleMenu}>Home</button>
                     </Link>
-                    {/*<Link to="/about">
-                <button onClick={toggleMenu}>About</button>
-              </Link>*/}
-                    <Link to="/title">
+                    <Link to="/#title">
                       <button onClick={toggleMenu}>Experience</button>
                     </Link>
-                    <Link to="/skills">
+                    <Link to="/#skills">
                       <button onClick={toggleMenu}>Skills</button>
                     </Link>
-                    <Link to="/timeline">
+                    <Link to="/#timeline">
                       <button onClick={toggleMenu}>Timeline</button>
                     </Link>
-                    <Link to="/projects">
-                      <button onClick={toggleMenu}>Projects</button>
-                    </Link>
-                    <Link to="/contact">
+                    <Link to="/#contact">
                       <button onClick={toggleMenu}>Contact</button>
                     </Link>
                   </div>
@@ -119,10 +113,9 @@ function App() {
 
           <main>
             <AnimatePresence mode="wait">
-              <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Navigate to="/home" />} />
+              <Routes>
                 <Route
-                  path="/home"
+                  path="*"
                   element={
                     <motion.div
                       variants={pageTransition}
@@ -132,90 +125,6 @@ function App() {
                       transition={{ duration: 0.3 }}
                     >
                       <Home />
-                    </motion.div>
-                  }
-                />
-                <Route
-                  path="/about"
-                  element={
-                    <motion.div
-                      variants={pageTransition}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      transition={{ duration: 0.3 }}
-                    >
-                      <About />
-                    </motion.div>
-                  }
-                />
-                <Route
-                  path="/skills"
-                  element={
-                    <motion.div
-                      variants={pageTransition}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Skills />
-                    </motion.div>
-                  }
-                />
-                <Route
-                  path="/timeline"
-                  element={
-                    <motion.div
-                      variants={pageTransition}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Timeline />
-                    </motion.div>
-                  }
-                />
-                <Route
-                  path="/title"
-                  element={
-                    <motion.div
-                      variants={pageTransition}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Title />
-                    </motion.div>
-                  }
-                />
-                <Route
-                  path="/projects"
-                  element={
-                    <motion.div
-                      variants={pageTransition}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Projects />
-                    </motion.div>
-                  }
-                />
-                <Route
-                  path="/contact"
-                  element={
-                    <motion.div
-                      variants={pageTransition}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Contact />
                     </motion.div>
                   }
                 />

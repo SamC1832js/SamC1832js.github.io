@@ -8,16 +8,51 @@ import { Footer } from "./Homecomponents/Footer";
 import Timeline from "./Homecomponents/TimelineFrontPage";
 import Contact from "./Contact";
 import Title from "./Homecomponents/Title";
+import { useLocation } from "react-router-dom";
 
 function Home() {
+  const location = useLocation();
+  const sectionRefs = {
+    home: useRef(null),
+    title: useRef(null),
+    skills: useRef(null),
+    timeline: useRef(null),
+    contact: useRef(null),
+  };
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (hash && sectionRefs[hash]?.current) {
+      sectionRefs[hash].current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [location]);
+
   return (
     <div className="home-container">
-      <Banner />
+      <section id="home" ref={sectionRefs.home}>
+        <Banner />
+      </section>
+
       <SkillsSection />
-      <Title />
-      <Timeline />
-      <Skills />
-      <Contact />
+
+      <section id="title" ref={sectionRefs.title}>
+        <Title />
+      </section>
+
+      <section id="timeline" ref={sectionRefs.timeline}>
+        <Timeline />
+      </section>
+
+      <section id="skills" ref={sectionRefs.skills}>
+        <Skills />
+      </section>
+
+      <section id="contact" ref={sectionRefs.contact}>
+        <Contact />
+      </section>
 
       <Footer />
     </div>
