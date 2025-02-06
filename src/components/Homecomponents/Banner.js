@@ -155,7 +155,7 @@ export const Banner = () => {
           <h2>My skills brief</h2>
           <div className="skills-category">
             {backendSkills.map((lang) => (
-              <div className="skills-items" key={lang.name}>
+              <div className="other-items" key={lang.name}>
                 <div className={lang.name}>
                   <h3>{lang.name}</h3>
                 </div>
@@ -164,7 +164,7 @@ export const Banner = () => {
           </div>
           <div className="skills-category">
             {programmingSkills.map((lang) => (
-              <div className="skills-items" key={lang.name}>
+              <div className="other-items" key={lang.name}>
                 <div className={lang.name}>
                   <h3>{lang.name}</h3>
                 </div>

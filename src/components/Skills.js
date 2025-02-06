@@ -1,70 +1,83 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, Fragment, useRef } from "react";
 import "./Skills.css";
 
 function Skills() {
   const [sortBy, setSortBy] = useState("total");
   const [isAscending, setIsAscending] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-
+  const [isInView, setIsInView] = useState(false);
+  const skillRef = useRef(null);
   const programmingLanguages = [
     { name: "CPP", academicYOE: 2.5, workYOE: 0.3 },
+    { name: "CSharp", academicYOE: 0.7, workYOE: 0.3 },
     { name: "Java", academicYOE: 1.6, workYOE: 0.3 },
     { name: "Python", academicYOE: 1.0, workYOE: 0.3 },
-    { name: "DotNET", academicYOE: 1.0, workYOE: 0.3 },
-    { name: "HTML", academicYOE: 0.8, workYOE: 0.3 },
-    { name: "JavaScript", academicYOE: 0.7, workYOE: 0.3 },
-    { name: "React", academicYOE: 0.8, workYOE: 0.0 },
-    { name: "CSharp", academicYOE: 0.4, workYOE: 0.3 },
-    { name: "VB", academicYOE: 0.6, workYOE: 0.0 },
-    { name: "Dart", academicYOE: 0.3, workYOE: 0.3 },
+    { name: "Angular", academicYOE: 1.0, workYOE: 0.3 },
+    { name: "React", academicYOE: 0.7, workYOE: 0.0 },
   ];
-
   const databases = [
-    { name: "MySQL", academicYOE: 1.2, workYOE: 0.3 },
-    { name: "PostgreSQL", academicYOE: 0.6, workYOE: 0.3 },
+    { name: "MySQL" },
+    { name: "PostgreSQL" },
+    { name: "Spring Data JPA" },
   ];
 
-  const tools = [
-    { name: "Git", academicYOE: 1.2, workYOE: 0.3 },
-    { name: "Linux", academicYOE: 0.7, workYOE: 0 },
-    { name: "Perforce", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "TeamCity", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "Selenium", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "Automated Testing Suite", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "Jira", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "Azure", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "Playwright", academicYOE: 0.2, workYOE: 0.0 },
-    { name: "Postman", academicYOE: 0.3, workYOE: 0.0 },
-    { name: "Spring Boot", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "RESTful API", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "Flutter", academicYOE: 0.3, workYOE: 0.3 },
+  const frameworks = [
+    { name: "Spring Boot" },
+    { name: "Flutter" },
+    { name: "Kafka" },
+    { name: "RESTful API" },
   ];
 
-  const techinicalSkills = [
-    { name: "Machine Learning", academicYOE: 0.6, workYOE: 0 },
-    { name: "Artificial Intelligence", academicYOE: 0.3, workYOE: 0 },
-    { name: "Software Development", academicYOE: 1.2, workYOE: 0.3 },
-    { name: "Web Development", academicYOE: 1.2, workYOE: 0.3 },
-    { name: "UI Automation", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "Test Automation", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "Agile", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "Regression Testing", academicYOE: 0.3, workYOE: 0.3 },
-    { name: "Scrum", academicYOE: 0.3, workYOE: 0.3 },
+  const testingTools = [
+    { name: "Selenium" },
+    { name: "Playwright" },
+    { name: "JUnit" },
+    { name: "Postman" },
+  ];
+  const cicd = [
+    { name: "Git" },
+    { name: "Perforce" },
+    { name: "TeamCity" },
+    { name: "DevOps" },
+    { name: "Docker" },
+    { name: "Kubernetes" },
+    { name: "AWS EC2" },
+  ];
+  const projectTools = [
+    { name: "JIRA" },
+    { name: "Confluence" },
+    { name: "Kanban" },
+    { name: "Agile" },
+    { name: "Scrum" },
   ];
 
   const spokenLanguages = [
-    { name: "Mandarin", academicYOE: 0, workYOE: 0 },
-    { name: "Cantonese", academicYOE: 0, workYOE: 0 },
-    { name: "English", academicYOE: 0, workYOE: 0 },
+    { name: "Mandarin" },
+    { name: "Cantonese" },
+    { name: "English" },
   ];
   // Combine all data into a single array
-  const allData = [
-    ...programmingLanguages,
-    ...databases,
-    ...tools,
-    ...techinicalSkills,
-    ...spokenLanguages,
-  ];
+  const allData = [...programmingLanguages];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (skillRef.current) {
+      observer.observe(skillRef.current);
+    }
+
+    return () => {
+      if (skillRef.current) observer.unobserve(skillRef.current);
+    };
+  }, []);
 
   const programmingAndDatabase = [...programmingLanguages, ...databases];
   // Get calculated dasharray values for all data
@@ -127,9 +140,10 @@ function Skills() {
         }, 70);
       }
     });
-  }, [dashArrayData]);
+  }, [isInView, dashArrayData]);
 
   useEffect(() => {
+    if (!isInView) return;
     const totalFrames = 110;
 
     programmingAndDatabase.forEach((lang) => {
@@ -166,7 +180,7 @@ function Skills() {
 
       requestAnimationFrame(animateYOE);
     });
-  }, []);
+  }, [isInView]);
 
   const sortedLanguages = [...programmingLanguages].sort((a, b) => {
     let aYOE =
@@ -193,15 +207,15 @@ function Skills() {
     return `Sort by: ${criteriaText} YOE: ${orderText}`;
   };
   return (
-    <div className="skills-container">
+    <div ref={skillRef} className="skills-container">
+      <h1>My Skills</h1>
       <div className="skills-category-header">
-        <h2>Programming Languages</h2>
         <div className="labels">
           <div className="label academic-label">
-            <span className="color-box"></span> Academic YOE
+            <span className="color-box"></span> Academic Years of Experience
           </div>
           <div className="label work-label">
-            <span className="color-box"></span> Work YOE
+            <span className="color-box"></span> Work Years of Experience
           </div>
         </div>
         <div className="sort-dropdown">
@@ -232,6 +246,7 @@ function Skills() {
           )}
         </div>
       </div>
+      <h2>Programming Languages</h2>
       <div className="skills-category">
         {sortedLanguages.map((lang) => (
           <div className="skills-items">
@@ -275,48 +290,7 @@ function Skills() {
       <h2>Databases</h2>
       <div className="skills-category">
         {databases.map((lang) => (
-          <div className="skills-items" key={lang.name}>
-            <div className={lang.name}>
-              <h3>{lang.name}</h3>
-              <div className="progress">
-                <svg>
-                  <circle
-                    cx="38"
-                    cy="38"
-                    r="36"
-                    className="academic-circle"
-                  ></circle>
-                  <circle
-                    cx="38"
-                    cy="38"
-                    r="36"
-                    className="work-circle"
-                  ></circle>
-                </svg>
-                <div className="YOE">
-                  <div className="academic">
-                    A:{" "}
-                    {animatedYOE
-                      .find((item) => item.name === lang.name)
-                      ?.academic.toFixed(1)}
-                  </div>
-                  <div className="work">
-                    W:{" "}
-                    {animatedYOE
-                      .find((item) => item.name === lang.name)
-                      ?.work.toFixed(1)}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <h2>Tools & Framework & Others</h2>
-      <div className="skills-category">
-        {tools.map((lang) => (
-          <div className="skills-items" key={lang.name}>
+          <div className="other-items" key={lang.name}>
             <div className={lang.name}>
               <h3>{lang.name}</h3>
             </div>
@@ -324,10 +298,43 @@ function Skills() {
         ))}
       </div>
 
-      <h2>Technical Skills</h2>
+      <h2>Frameworks</h2>
       <div className="skills-category">
-        {techinicalSkills.map((lang) => (
-          <div className="skills-items" key={lang.name}>
+        {frameworks.map((lang) => (
+          <div className="other-items" key={lang.name}>
+            <div className={lang.name}>
+              <h3>{lang.name}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Testing Tools</h2>
+      <div className="skills-category">
+        {testingTools.map((lang) => (
+          <div className="other-items" key={lang.name}>
+            <div className={lang.name}>
+              <h3>{lang.name}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>CI/CD & Cloud</h2>
+      <div className="skills-category">
+        {cicd.map((lang) => (
+          <div className="other-items" key={lang.name}>
+            <div className={lang.name}>
+              <h3>{lang.name}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Project Management</h2>
+      <div className="skills-category">
+        {projectTools.map((lang) => (
+          <div className="other-items" key={lang.name}>
             <div className={lang.name}>
               <h3>{lang.name}</h3>
             </div>
@@ -338,7 +345,7 @@ function Skills() {
       <h2>Languages</h2>
       <div className="skills-category">
         {spokenLanguages.map((lang) => (
-          <div className="skills-items" key={lang.name}>
+          <div className="other-items" key={lang.name}>
             <div className={lang.name}>
               <h3>{lang.name}</h3>
             </div>
