@@ -42,7 +42,7 @@ function Contact() {
           </h1>
           <div className="contact-info">
             <FaMapMarkerAlt /> {/* Map icon */}
-            <span>Katy, Texas, USA</span>
+            <span>Sunnyvale, CA, USA</span>
           </div>
           <div className="contact-info">
             <FaLinkedin /> {/* LinkedIn icon */}
@@ -51,7 +51,7 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Cheng Sam Cheang
+              Sam Cheang
             </a>
           </div>
           <div className="contact-info">
@@ -65,7 +65,7 @@ function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Cheng Sam Cheang
+              Sam Cheang
             </a>
           </div>
           <div className="contact-info">

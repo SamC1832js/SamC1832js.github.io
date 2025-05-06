@@ -1,12 +1,10 @@
-//import { NavBar } from "./Homecomponents/NavBar";
 import React, { useEffect, useRef } from "react";
 import { Banner } from "./Homecomponents/Banner";
 import { SkillsSection } from "./Homecomponents/SkillsSection";
-import Skills from "./Skills";
-//import { Contact } from "./components/Contact";
+import Skills from "./Homecomponents/Skills";
 import { Footer } from "./Homecomponents/Footer";
 import Timeline from "./Homecomponents/TimelineFrontPage";
-import Contact from "./Contact";
+import Contact from "./Homecomponents/Contact";
 import Title from "./Homecomponents/Title";
 import { useLocation } from "react-router-dom";
 

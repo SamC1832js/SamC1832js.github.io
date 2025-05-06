@@ -1,17 +1,11 @@
 import "./App.css";
 import { Route, Routes, Link, Navigate, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
 import Home from "./components/Home";
-import Timeline from "./components/Timeline";
 import { motion, AnimatePresence } from "framer-motion";
 import { ReactComponent as SettingIcon } from "./icon/list-settings-line.svg";
 import logo from "./components/assets/img/logo.png";
-import Enter from "./components/Enter";
-import Title from "./components/Homecomponents/Title";
+import Load from "./components/Load";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 
@@ -20,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 1800);
     return () => clearTimeout(timer);
   }, []);
 
@@ -74,7 +68,7 @@ function App() {
   return (
     <div className="App">
       {loading ? (
-        <Enter />
+        <Load />
       ) : (
         <>
           <header className="App-header">

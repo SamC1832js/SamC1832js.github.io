@@ -1,4 +1,5 @@
 import "./Home.css";
+import "./Banner.css";
 import React, { useState, useEffect, useRef } from "react";
 import bannerImg from "../assets/img/banner-img.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
@@ -147,7 +148,7 @@ export const Banner = () => {
             <span
               className="txt-rotate"
               data-period="1000"
-              data-rotate='["Software QA Analyst", "Software Engineer In Test", "Web Developer"]'
+              data-rotate='["Software QA", "Software Engineer", "Web Developer"]'
             >
               <span className="wrap">{text}</span>
             </span>

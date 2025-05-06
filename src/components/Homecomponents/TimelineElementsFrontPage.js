@@ -4,14 +4,26 @@ import UHDIcon from "../assets/img/uhd.png";
 import OutlierIcon from "../assets/img/outlier-ai-squareLogo-1715217719094.png";
 import HaidilaoIcon from "../assets/img/haidilao.png";
 import YoutubeIcon from "../assets/img/youtube.png";
+import WalmartIcon from "../assets/img/WMT-Spark-SparkYellow-RGB.png";
 let timelineElements = [
+  {
+    id: 8,
+    title: "Java Software Engineer",
+    location: "Walmart",
+    date: "April - Current",
+    image: WalmartIcon,
+    boldTitle: "Java Backend Development",
+    description:
+      "Increased code coverage by 30% through unit/integration tests using JUnit and Mockito. \n Managed large-scale projects via JIRA, Confluence, and Kanban, streamlining Agile workflows. \n Enhanced system stability by implementing Kafka for asynchronous communication between microservices.",
+    icon: "work",
+  },
   {
     id: 7,
     title: "Full Stack Developer",
     location: "Personal Projects",
-    date: "July 2024 - Current",
+    date: "July 2024 - March 2025",
     image: WebDevIcon,
-    boldTitle: "Full Stack Web development",
+    boldTitle: "Full Stack Web Development",
     description:
       "Built responsive frontend using React JS with efficient state management. \n Implemented Spring Boot backend with WebSocket, WebRTC, and Stripe integration. \n Developed RESTful APIs with PostgreSQL and JPA for seamless data interaction.",
     icon: "project",

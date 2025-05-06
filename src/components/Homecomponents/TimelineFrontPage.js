@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from "react";
-import "../Timeline.css";
+import "./Timeline.css";
 import { ReactComponent as EducationIcon } from "../../icon/graduation-cap-line.svg";
 import { ReactComponent as WorkIcon } from "../../icon/briefcase-4-fill.svg";
 import timelineElements from "./TimelineElementsFrontPage";
@@ -20,7 +20,7 @@ function TimelineFrontPage() {
     // Define patterns for numbers and tech stacks
     const patterns = [
       /\b\d{1,3}(?:,\d{3})*(?:\.\d+)?\b/g,
-      /\b(CS Magna Cum Laude|Robothon|Hackathons|ACM|React JS|Spring Boot|WebSocket|WebRTC|Stripe|PostgreSQL|JPA|C#|Selenium WebDriver|TeamCity|XML|Excel|Java|Python|JavaScript|Adobe Premiere|Photoshop|LLM)\b/g, // Tech stacks
+      /\b(CS Magna Cum Laude|Robothon|Hackathons|ACM|JIRA|Confluence|Kanban|JUnit|Mockito|Kafka|Agile|React JS|Spring Boot|WebSocket|WebRTC|Stripe|PostgreSQL|JPA|C#|Selenium WebDriver|TeamCity|XML|Excel|Java|Python|JavaScript|Adobe Premiere|Photoshop|LLM)\b/g, // Tech stacks
     ];
 
     // Replace patterns with bolded versions

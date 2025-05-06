@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import "./Enter.css";
+import "./Load.css";
 import videoBg from "./assets/video/banner-bg.webm";
-function Enter() {
+function Load() {
   const [dashOffsets, setDashOffsets] = useState({
     circle1: 30,
     circle2: 40,
@@ -73,4 +73,4 @@ function Enter() {
   );
 }
 
-export default Enter;
+export default Load;
