@@ -70,7 +70,7 @@ function Contact() {
           </div>
           <div className="contact-info">
             <FaPhone /> {/* Phone icon */}
-            <span>+1 281 722 9885</span>
+            <span>+1 281 772 9885</span>
           </div>
         </div>
         <form
