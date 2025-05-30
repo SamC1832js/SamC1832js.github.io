@@ -20,7 +20,7 @@ let timelineElements = [
   },
   {
     id: 8,
-    title: "Java Full Stack Software Engineer Intern",
+    title: "Java Full Stack Developer Intern",
     location: "Rothur Tech",
     date: "December 2024 - March 2025",
     image: RothurTechIcon,

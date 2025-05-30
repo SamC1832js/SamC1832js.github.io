@@ -30,18 +30,18 @@ function Skills() {
 
   const testingTools = [
     { name: "Selenium" },
-    { name: "Playwright" },
+    { name: "Mockito" },
     { name: "JUnit" },
     { name: "Postman" },
   ];
   const cicd = [
     { name: "Git" },
-    { name: "Perforce" },
-    { name: "TeamCity" },
+    { name: "Github" },
+    { name: "Concord" },
     { name: "DevOps" },
     { name: "Docker" },
     { name: "Kubernetes" },
-    { name: "AWS EC2" },
+    { name: "AWS services" },
   ];
   const projectTools = [
     { name: "JIRA" },
