@@ -79,6 +79,7 @@ function Contact() {
           action="https://usebasin.com/f/a4685fb1c06e"
           method="POST"
         >
+          <h1>Send me a message</h1>
           <div className="form-group">
             <input
               type="text"
