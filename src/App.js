@@ -88,14 +88,15 @@ function App() {
                       <button onClick={toggleMenu}>Home</button>
                     </Link>
                     <Link to="/#title">
-                      <button onClick={toggleMenu}>Experience</button>
+                      <button onClick={toggleMenu}>What I Do</button>
+                    </Link>
+                    <Link to="/#timeline">
+                      <button onClick={toggleMenu}>Experiences</button>
                     </Link>
                     <Link to="/#skills">
                       <button onClick={toggleMenu}>Skills</button>
                     </Link>
-                    <Link to="/#timeline">
-                      <button onClick={toggleMenu}>Timeline</button>
-                    </Link>
+
                     <Link to="/#contact">
                       <button onClick={toggleMenu}>Contact</button>
                     </Link>

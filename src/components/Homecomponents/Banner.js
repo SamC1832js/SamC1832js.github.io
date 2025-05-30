@@ -12,11 +12,7 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [
-    "Software QA Analyst",
-    "Software Engineer",
-    "Web Developer",
-  ];
+  const toRotate = ["Software QA", "Software Engineer", "Web Developer"];
   const period = 2000;
   const taglineRef = useRef(null);
 
@@ -126,7 +122,7 @@ export const Banner = () => {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
-      setDelta(500);
+      setDelta(100);
     } else {
       setIndex((prevIndex) => prevIndex + 1);
     }
@@ -144,7 +140,7 @@ export const Banner = () => {
             Welcome to my Portfolio
           </span>
           <h1>
-            {`Hi! I'm Sam`}{" "}
+            {`Hi! I'm Sam, a`}{" "}
             <span
               className="txt-rotate"
               data-period="1000"

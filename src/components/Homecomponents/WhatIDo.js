@@ -1,10 +1,10 @@
-import "./Title.css";
+import "./WhatIDo.css";
 import codingImg from "../assets/img/coding.svg";
 import softwareTesterImg from "../assets/img/softwaretester.png";
 import contentCreatorImg from "../assets/img/contentcreator.png";
 import webDeveloperImg from "../assets/img/webdeveloper.png";
 import React, { useEffect, useRef } from "react";
-function Title() {
+function WhatIDo() {
   const titleTextRefs = useRef([]);
 
   useEffect(() => {
@@ -65,25 +65,28 @@ function Title() {
   ];
 
   return (
-    <div className="title-container">
-      {titleItems.map((item, index) => (
-        <div className="title-item" key={index}>
-          <div
-            className="title-text"
-            ref={(el) => (titleTextRefs.current[index] = el)}
-          >
-            {item.text.map((line, i) => (
-              <p key={i}>{line}</p>
-            ))}
-          </div>
+    <div className="what-i-do-section">
+      <h2 className="section-title">What I Do</h2>
+      <div className="title-container">
+        {titleItems.map((item, index) => (
+          <div className="title-item" key={index}>
+            <div
+              className="title-text"
+              ref={(el) => (titleTextRefs.current[index] = el)}
+            >
+              {item.text.map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
+            </div>
 
-          <div className="title-img">
-            <img src={item.img} alt={item.img} />
+            <div className="title-img">
+              <img src={item.img} alt={item.img} />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
 
-export default Title;
+export default WhatIDo;

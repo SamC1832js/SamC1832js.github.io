@@ -187,3 +187,26 @@ root {
     height: auto; /* Prevent image distortion */
   }
 }
+
+.what-i-do-section {
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.section-title {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--dark--color);
+}

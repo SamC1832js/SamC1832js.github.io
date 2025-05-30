@@ -20,7 +20,7 @@ function TimelineFrontPage() {
     // Define patterns for numbers and tech stacks
     const patterns = [
       /\b\d{1,3}(?:,\d{3})*(?:\.\d+)?\b/g,
-      /\b(CS Magna Cum Laude|Robothon|Hackathons|ACM|JIRA|Confluence|Kanban|JUnit|Mockito|Kafka|Agile|React JS|Spring Boot|WebSocket|WebRTC|Stripe|PostgreSQL|JPA|C#|Selenium WebDriver|TeamCity|XML|Excel|Java|Python|JavaScript|Adobe Premiere|Photoshop|LLM)\b/g, // Tech stacks
+      /\b(CS Magna Cum Laude|Robothon|Hackathons|ACM|Docker|Spring Data JPA|AWS|CI|CD|JIRA|Confluence|Kanban|JUnit|Mockito|Kafka|Agile|React JS|Spring Boot|WebSocket|WebRTC|Stripe|PostgreSQL|JPA|C#|Selenium WebDriver|TeamCity|XML|Excel|Java|Python|JavaScript|Adobe Premiere|Photoshop|LLM)\b/g, // Tech stacks
     ];
 
     // Replace patterns with bolded versions
@@ -33,7 +33,7 @@ function TimelineFrontPage() {
   }
   return (
     <div className="timeline">
-      <h1>My Experience</h1>
+      <h1>My Experiences</h1>
       <VerticalTimeline>
         {timelineElements
           .sort((a, b) => b.id - a.id)

@@ -5,14 +5,14 @@ import Skills from "./Homecomponents/Skills";
 import { Footer } from "./Homecomponents/Footer";
 import Timeline from "./Homecomponents/TimelineFrontPage";
 import Contact from "./Homecomponents/Contact";
-import Title from "./Homecomponents/Title";
+import WhatIDo from "./Homecomponents/WhatIDo";
 import { useLocation } from "react-router-dom";
 
 function Home() {
   const location = useLocation();
   const sectionRefs = {
     home: useRef(null),
-    title: useRef(null),
+    whatIDo: useRef(null),
     skills: useRef(null),
     timeline: useRef(null),
     contact: useRef(null),
@@ -36,11 +36,11 @@ function Home() {
 
       <SkillsSection />
 
-      <section id="title" ref={sectionRefs.title}>
-        <Title />
+      <section id="whatIDo" ref={sectionRefs.whatIDo}>
+        <WhatIDo />
       </section>
 
-      <section id="timeline" ref={sectionRefs.timeline}>
+      <section id="experiences" ref={sectionRefs.timeline}>
         <Timeline />
       </section>
 
