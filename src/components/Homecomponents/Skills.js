@@ -208,7 +208,7 @@ function Skills() {
   };
   return (
     <div ref={skillRef} className="skills-container">
-      <h1>My Skills</h1>
+      <h1 className="section-title">My Skills</h1>
       <div className="skills-category-header">
         <div className="labels">
           <div className="label academic-label">

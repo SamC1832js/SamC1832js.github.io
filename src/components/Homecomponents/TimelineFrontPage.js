@@ -33,7 +33,7 @@ function TimelineFrontPage() {
   }
   return (
     <div className="timeline">
-      <h1>My Experiences</h1>
+      <h2 className="section-title">My Experiences</h2>
       <VerticalTimeline>
         {timelineElements
           .sort((a, b) => b.id - a.id)

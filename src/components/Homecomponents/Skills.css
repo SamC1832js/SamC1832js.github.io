@@ -213,6 +213,14 @@
   background-color: var(--color-work); /* Match work circle color */
 }
 
+.skills-container .section-title {
+  padding: 6rem 0;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: 768px) {
   .skills-container .skills-category-header {
     flex-direction: column;

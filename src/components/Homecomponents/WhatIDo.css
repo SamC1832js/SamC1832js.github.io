@@ -12,7 +12,7 @@ root {
   align-items: center;
   width: 100%;
   overflow: hidden;
-  padding-top: 5rem;
+  padding-top: 2rem;
 }
 
 .title-item {
@@ -23,6 +23,12 @@ root {
   align-items: center;
   margin-bottom: 15rem;
 }
+
+/* Add this new rule to remove margin from the last item */
+.title-item:last-child {
+  margin-bottom: 0;
+}
+
 .title-container div:nth-child(1) {
   transform: translateX(20%);
   -webkit-transform: translateX(20%);
@@ -189,24 +195,13 @@ root {
 }
 
 .what-i-do-section {
-  padding: 4rem 0;
   width: 100%;
 }
 
 .section-title {
+  padding: 8rem 0;
   margin-top: 4rem;
   text-align: center;
   font-size: 3.5rem;
-  margin-bottom: 3rem;
-}
-
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background-color: var(--dark--color);
+  margin-bottom: 0rem;
 }

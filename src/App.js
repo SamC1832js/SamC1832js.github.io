@@ -87,7 +87,7 @@ function App() {
                     <Link to="/#home">
                       <button onClick={toggleMenu}>Home</button>
                     </Link>
-                    <Link to="/#title">
+                    <Link to="/#whatIDo">
                       <button onClick={toggleMenu}>What I Do</button>
                     </Link>
                     <Link to="/#timeline">
